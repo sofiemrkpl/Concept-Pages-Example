@@ -12,10 +12,10 @@ body {
 }
 
 .main-header {
+    background-color:rgb(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #0056b3;
     padding: 1rem 2rem;
 }
 
@@ -38,3 +38,39 @@ p {
     color: red;
     text-align: center;
   }
+
+body{
+    background-image: url('../assets/abstract-blue-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.main-nav {
+    background: none;
+    padding: 0.5rem 0;
+}
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    
+}
+
+.main-nav li a:hover {
+    color: #a9cfff;
+    border-bottom: 2px solid #a9cfff;
+}
+
