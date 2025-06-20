@@ -1,0 +1,32 @@
+#first content-speak your mind- on figma
+
+<section class="hero-section">
+            <div class="announcement">
+                <span>Announcing our next round of funding.</span>
+                <a href="#">Read more →</a>
+            </div>
+
+            <h1 class="hero-title">
+                Speak your mind <br> to the world
+            </h1>
+
+            <p class="hero-description">
+                Lorem ipsum dolor sit amet consectetur. Neque porttitor amet suscipit elementum elit id egestas neque. 
+                Quis fusce fames iaculis leo egestas egestas ac.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn primary">Get in touch</a>
+                <a href="#" class="btn link">Live demo →</a>
+            </div>
+</section>
+
+
+
+#video
+        <section class="fullwidth-video">
+            <video autoplay muted loop playsinline>
+                <source src="../assets/videos/work_vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
