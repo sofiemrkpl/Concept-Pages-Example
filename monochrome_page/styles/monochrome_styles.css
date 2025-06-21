@@ -1,57 +1,83 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: white;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
 }
 
-.main-header {
-    background-color: rgba(0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+.main-header {
+  background-color: rgba(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
     
 }
 
 
 .main-nav {
-    background: none;
-    padding: 0.5rem 0;
+  background: none;
+  padding: 0.5rem 0;
 }
 
+.main-nav li a.active {
+    border-bottom: 2px solid white;
+}
 
 .main-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .main-nav ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .auth-buttons {
+      justify-content: flex-end;
+      width: 100%;
+    }
 }
 
 .main-nav li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: border-bottom 0.3s ease;
 }
 
 .main-nav li a:hover {
-    color: #ffff;
-    border-bottom: 2px solid #ffff;
+  color: #ffff;
+  border-bottom: 2px solid #ffff;
 }
 
 .logo {
@@ -71,11 +97,6 @@ body {
     cursor: pointer;
 }
 
-.auth-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
 
 .signup-btn{
     text-decoration: none;
@@ -108,97 +129,77 @@ body {
     height: 20px;
 }
 
-.carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100vw;   
-  height: 800px;  
-  margin: 0;
-}
-
+/*carousel*/
 .carousel-container {
-  position: relative;
-  width: 100%;
-  height: 100%;   
-  overflow: hidden;
+    width: 100%;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
 .carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
-.carousel-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 300%; /* For 3 items */
-}
-
-.carousel-slide img {
-  width: 100%;
-  display: flex;
+.carousel-image {
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 100;
-  padding: 0 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.carousel-button:hover {
+    opacity: 1;
 }
 
 .carousel-button.left {
-  left: 0;
+    left: 0;
 }
 
 .carousel-button.right {
-  right: 0;
-}
-
-.carousel-item {
-  min-width: 100%;
-  height: 800px; 
-  background-size: cover;
-  background-position: center;
+    right: 0;
 }
 
 .carousel-dots {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem 0;
+    background: #f2f2f2;
 }
 
-.carousel-dots .dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: black;
-  opacity: 0.6;
-  cursor: pointer;
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
 }
 
-.carousel-dots .dot.active {
-  opacity: 1;
-}
-
-.learn-more-btn {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  border: 2px solid black;
-  background: transparent;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
+.dot.active {
+    background-color: grey;
 }
