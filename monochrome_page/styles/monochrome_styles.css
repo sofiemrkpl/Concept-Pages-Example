@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: white;
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+
+.main-nav {
+    background: none;
+    padding: 0.5rem 0;
+}
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    
+}
+
+.main-nav li a:hover {
+    color: #ffff;
+    border-bottom: 2px solid #ffff;
+}
+
+.logo {
+  display: block;
+  max-width: 50px;
+}
+
+
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.signup-btn{
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+.signup-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Adjust spacing between icon and text */
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.signup-link:hover {
+    color: #ccc;
+}
+
+.signup-link .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;   
+  height: 800px;  
+  margin: 0;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;   
+  overflow: hidden;
+}
+
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* For 3 items */
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: flex;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0 1rem;
+}
+
+.carousel-button.left {
+  left: 0;
+}
+
+.carousel-button.right {
+  right: 0;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 800px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-dots .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: black;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  opacity: 1;
+}
+
+.learn-more-btn {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border: 2px solid black;
+  background: transparent;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
