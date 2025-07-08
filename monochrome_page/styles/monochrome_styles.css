@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: white;
+  background-color: rgb(13, 13, 13);
   color: black;
 }
 
@@ -151,7 +151,7 @@ body {
 
 .carousel-image {
     width: 100vw;
-    height: 70vh;
+    height: min(70vh, 800px);
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -165,10 +165,12 @@ body {
     color: white;
     font-size: 3rem;
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
     padding: 0 1rem;
     opacity: 0.8;
     transition: opacity 0.3s;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .carousel-button:hover {
@@ -184,22 +186,28 @@ body {
 }
 
 .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 1rem 0;
-    background: #f2f2f2;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5rem;
+  background: none; /* Remove background */
+  z-index: 15; /* Above image, below buttons */
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
-    background-color: black;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s;
+  height: 15px;
+  width: 15px;
+  background-color: rgb(13, 13, 13); 
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
 }
 
 .dot.active {
-    background-color: grey;
+  background-color: rgb(77, 77, 77);
 }
+
