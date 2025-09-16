@@ -20,7 +20,6 @@ body a{
     padding: 5px 20px;
 }
 
-
 .main.header .logo{
     height:24px;
 }
@@ -97,6 +96,10 @@ body a{
     display: block;
     margin-top: 5px;
     font-size: 14px;
+}
+
+.wrapper .index.region section{
+    margin-bottom: 60px;
 }
 
 
@@ -186,7 +189,9 @@ body a{
 
 #hero_btn1{
     padding: 20px 40px;
-    box-shadow: 4px 4px 8px #404040;
+    /* box-shadow: 4px 4px 4px #666666; */
+    box-shadow: 2px 2px 4px #262626;
+    border: none;
 }
 
 .hero.video{
@@ -197,9 +202,89 @@ body a{
     height: 100%;
     object-fit: cover; /* makes video behave like background*/
     z-index: -1; /*sends video behind other content */
+    margin: 0px;
 }
 
 /* hero end */
+
+
+/* Popular Plans */
+
+.popular.plans{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.grid_cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: stretch;
+}
+
+
+.grid_cards .card{
+
+    width: 20vw;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 1.25rem;
+    background: #ffffff;
+    box-shadow: 0 6px 24px rgba(0,0,0,.08);
+
+    display: grid;
+
+    align-items: stretch;
+
+
+}
+
+.card-image{
+    max-width: 20vw;
+    margin: 0;
+
+}
+.card-title {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.card-price {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 0;
+}
+.card-price span {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #737373;
+}
+
+.card-list {
+    margin: 0 0 1rem 1.2rem;
+    padding: 0;
+}
+.card-list li {
+    margin-bottom: 0.3rem;
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 10px hsl(0,0,0,.06);
+    background: #2563eb;
+    color: #ffffff;
+}
+
+
+
 
 
 
