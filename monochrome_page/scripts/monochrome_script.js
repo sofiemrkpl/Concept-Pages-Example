@@ -1,182 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.carousel-track');
-  const slides = Array.from(track.children);
-  const nextButton = document.querySelector('.carousel-button.right');
-  const prevButton = document.querySelector('.carousel-button.left');
-  const dots = Array.from(document.querySelectorAll('.dot'));
-  let currentSlide = 0;
-  let autoplayInterval;
+let slideIndex = 1;
+showSlides(slideIndex);
 
-  function updateCarousel(index) {
-    const slideWidth = slides[0].offsetWidth;
-    track.style.transform = `translateX(-${slideWidth * index}px)`;
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-    currentSlide = index;
-  }
-
-  function showNextSlide() {
-    const nextIndex = (currentSlide + 1) % slides.length;
-    updateCarousel(nextIndex);
-  }
-
-  function showPrevSlide() {
-    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    updateCarousel(prevIndex);
-  }
-
-  function startAutoplay() {
-    autoplayInterval = setInterval(showNextSlide, 4000);
-  }
-
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
-  }
-
-  function getHeaderHeight() {
-    const header = document.querySelector('.main-header');
-    return header.offsetHeight;
-  }
-
-  function resizeCarouselImages() {
-    const images = document.querySelectorAll('.carousel-image');
-    const headerHeight = getHeaderHeight();
-    const availableHeight = window.innerHeight - headerHeight;
-    const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-    images.forEach(img => {
-      img.style.height = `${targetHeight}px`;
-    });
-  }
-
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
-}
-
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
-}
-
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
-}
-
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
-}
-
-  function resizeCarouselImages() {
-  const images = document.querySelectorAll('.carousel-image');
-  const headerHeight = getHeaderHeight();
-  const availableHeight = window.innerHeight - headerHeight;
-  const targetHeight = Math.min(availableHeight, 800); // clamp to 800px max
-
-  images.forEach(img => {
-    img.style.height = `${targetHeight}px`;
-  });
-}
-
-
-  function debounce(func, wait = 100) {
-    let timeout;
-    return () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(func, wait);
-    };
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
 
-  nextButton.addEventListener('click', () => {
-    showNextSlide();
-    stopAutoplay();
-    startAutoplay();
-  });
+setInterval(() => plusSlides(1), 5000);
 
-  prevButton.addEventListener('click', () => {
-    showPrevSlide();
-    stopAutoplay();
-    startAutoplay();
-  });
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      updateCarousel(index);
-      stopAutoplay();
-      startAutoplay();
-    });
-  });
-
-  window.addEventListener('resize', debounce(() => {
-    updateCarousel(currentSlide);
-    resizeCarouselImages();
-  }));
-
-  // Touch Swipe Support
-  let startX = 0;
-  track.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  track.addEventListener('touchend', (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-    if (Math.abs(diff) > 50) {
-      diff > 0 ? showNextSlide() : showPrevSlide();
-      stopAutoplay();
-      startAutoplay();
-    }
-  });
-
-  // Init
-  resizeCarouselImages();
-  updateCarousel(currentSlide);
-  startAutoplay();
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') plusSlides(1);
+  if (e.key === 'ArrowLeft') plusSlides(-1);
 });

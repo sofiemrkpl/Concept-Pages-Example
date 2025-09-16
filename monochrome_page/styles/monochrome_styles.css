@@ -11,10 +11,8 @@ body {
 }
 
 
-.main-header {
-  background-color: rgba(0, 0, 0);
-  display: flex;
-  justify-content: space-between;
+.main.header {
+  background-color: black;
   align-items: center;
   padding: 1rem 2rem;
   position: fixed;
@@ -26,48 +24,31 @@ body {
 }
 
 
-.main-nav {
+.primary.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   background: none;
   padding: 0.5rem 0;
 }
-
-.main-nav li a.active {
-    border-bottom: 2px solid white;
-}
-
-.main-nav ul {
+.navigation-list{
   list-style: none;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 3rem;
   padding: 0;
   margin: 0;
 }
 
-.auth-buttons {
+.authentication{
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-@media (max-width: 768px) {
-    .main-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .main-nav ul {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .auth-buttons {
-      justify-content: flex-end;
-      width: 100%;
-    }
-}
-
-.main-nav li a {
+.primary.navigation .dropdown a {
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -75,7 +56,7 @@ body {
   transition: border-bottom 0.3s ease;
 }
 
-.main-nav li a:hover {
+.primary.navigation .dropdown a:hover {
   color: #ffff;
   border-bottom: 2px solid #ffff;
 }
@@ -87,127 +68,114 @@ body {
 
 
 .icons {
-    display: flex;
-    gap: 1rem;
+  display: block;
+  gap: 1rem;
 }
 
 .icon {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
 
 
-.signup-btn{
-    text-decoration: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s, text-decoration 0.3s;
-}
-.signup-link {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem; /* Adjust spacing between icon and text */
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.signup-link:hover {
-    color: #ccc;
-}
-
-.signup-link .icon {
-    width: 20px;
-    height: 20px;
-}
-
-/*carousel*/
-.carousel-container {
-    width: 100%;
-    margin-top: 80px;
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
-
-.carousel-image {
-    width: 100vw;
-    height: min(70vh, 800px);
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    cursor: pointer;
-    z-index: 20;
-    padding: 0 1rem;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    pointer-events: auto;
-    touch-action: manipulation;
-}
-
-.carousel-button:hover {
-    opacity: 1;
-}
-
-.carousel-button.left {
-    left: 0;
-}
-
-.carousel-button.right {
-    right: 0;
-}
-
-.carousel-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.signup{
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 0.5rem;
-  background: none; /* Remove background */
-  z-index: 15; /* Above image, below buttons */
+  align-items: center;
+  text-decoration: none;
+  background: none;
+  color: white;
+  gap: 1rem;
+}
+
+
+/* Slideshow */
+.slideshow-container {
+  max-width: 100%;
+  height: 90vh;
+  position: relative;  
+  margin: 80px auto 0; 
+  overflow: hidden;
+}
+
+.mySlides {
+   display: none; 
+}
+
+.mySlides img {
+  width: 100%; 
+  height: 100%;
+  display: block; 
+  object-fit: cover;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slideshow-container .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;       /* space from bottom */
+  width: 100%;
+  text-align: center;
 }
 
 .dot {
+  cursor: pointer;
   height: 15px;
   width: 15px;
-  background-color: rgb(13, 13, 13); 
+  margin: 0 2px;
+  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.3s;
+  transition: background-color 0.6s ease;
 }
 
-.dot.active {
-  background-color: rgb(77, 77, 77);
+.active, .dot:hover {
+  background-color: #717171;
 }
 
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.prev { left: 0; border-radius: 0 3px 3px 0; }
+.next { right: 0; border-radius: 3px 0 0 3px; }

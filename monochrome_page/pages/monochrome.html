@@ -10,53 +10,61 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="logo-container">
-            <a href="#" class="logo">
-                <img src="../../assets/icons/logo.png" alt="Cellectro Home" class="logo">
-            </a>
-        </div>
+    <header class="main header" id="header">
+        <nav class="primary navigation" role="navigation">
+            <div class="logo-container">
+                <a href="../pages/monochrome.html" class="logo">
+                    <img class="logo" role="button" src="../../assets/icons/logo.png" alt="Cellectro Home">
+                </a>                
+            </div>
 
 
-
-        <nav class="main-nav" role="navigation" aria-label="Primary Navigation">
-            <ul>
-                <li><a href="#">ΣΤΑΘΕΡΟ</a></li>
-                <li><a href="#">ΚΙΝΗΤΟ</a></li>
-                <li><a href="#">INTERNET</a></li>
-                <li><a href="#">ΠΡΟΙΟΝΤΑ</a></li>
-                <li><a href="#">ΥΠΗΡΕΣΙΕΣ</a></li>
+            <ul class="navigation-list">
+                <li class="dropdown"><a href="#">ΣΤΑΘΕΡΟ</a></li>
+                <li class="dropdown"><a href="#">ΚΙΝΗΤΟ</a></li>
+                <li class="dropdown"><a href="#">INTERNET</a></li>
+                <li class="dropdown"><a href="#">ΠΡΟΙΟΝΤΑ</a></li>
+                <li class="dropdown"><a href="#">ΥΠΗΡΕΣΙΕΣ</a></li>
             </ul>
+
+            <div class="authentication">
+                <a href="#" class="signup">
+                    <img  class="icon" src="../../assets/icons/profile.png" alt="Profile Icon">
+                    <span class="label" >Sign up</span>
+                </a>
+            </div>
         </nav>
-
-        <div class="auth-buttons" style="padding: 0;">
-        <a href="#" class="signup-link">
-            <img src="../../assets/icons/profile.png" alt="Profile Icon" class="icon">
-            <span>Sign up</span>
-        </a>
-        </div>
-
     </header>
 
     <main>
-    <section class="carousel-container">
-        <div class="carousel">
-        <div class="carousel-track">
-            <img src="../../assets/images/abstract-unsplash1.jpg" class="carousel-image" alt="Image 1">
-            <img src="../../assets/images/abstract-blue-unsplash.jpg" class="carousel-image" alt="Image 2">
-            <img src="../../assets/images/abstract-blue-unsplash.jpg" class="carousel-image" alt="Image 3">
-        </div>
+        <section class="slideshow-container">
+            <div class="mySlides fade">
+            <img src="../assets/abstract-blue-unsplash.jpg" style="width:100%" alt="image 1">
+            </div>
 
-        <button class="carousel-button left">&#10094;</button>
-        <button class="carousel-button right">&#10095;</button>
+            <div class="mySlides fade">
+            <img src="../assets/abstract-unsplash.jpg" style="width:100%" alt="image 2">
+            </div>
 
-        <div class="carousel-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        </div>
-    </section>
+            <div class="mySlides fade">
+            <img src="../assets/abstract-blue-unsplash.jpg" style="width:100%" alt="image 3">
+            </div>
+
+            <div class="mySlides fade">
+            <img src="../assets/abstract-unsplash.jpg" style="width:100%" alt="image 4">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+        </section>
     </main>
 
     <!-- JavaScript: go up one level to js scripts/ -->
