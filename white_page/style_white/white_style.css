@@ -9,9 +9,10 @@ body a{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 .main.header .heading{
-    display: flex;
-    justify-content: center; 
+    display: grid;
+    justify-content: space-between; 
     align-items: center;
     position: relative;
     height: 30px;
@@ -28,6 +29,7 @@ body a{
 }
 
 .primary.navigation.actions{
+    grid-column: 2;   
     list-style: none;
     margin: 0;
     padding: 0;
@@ -35,28 +37,38 @@ body a{
     align-items: center;
     gap: 10px;
     flex-wrap: nowrap;
+    
+    justify-self: center;
+
 }
-.user.navigation.actions{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.authentication{
+    grid-column: 3;
+    justify-self: end;
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-wrap: nowrap;
-    position: absolute;
-    right: 2%;
+    margin: 0;
+
 }
 
-.main.header .primary.navigation.actions li{
+
+.primary.navigation.actions .dropdown{
     display: inline;
-    padding: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-.main.header li a{
+.primary.navigation.actions .search,
+.primary.navigation.actions .cart{
+    display: inline;
+    padding-left: 1rem;
+}
+
+
+.main.header a{
     text-decoration: none;
     color: black;
 }
+
 
 .secondary.header{
     display: flex;
@@ -291,7 +303,6 @@ body a{
     color: #ffffff;
     margin: 5px;
 }
-
 
 
 
