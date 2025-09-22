@@ -296,6 +296,7 @@ body a{
 }
 .card-list li {
     margin-bottom: 0.3rem;
+    list-style-type:none;
 }
 
 
