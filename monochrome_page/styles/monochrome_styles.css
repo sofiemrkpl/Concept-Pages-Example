@@ -7,7 +7,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(13, 13, 13);
-  /* background-color: pink; */
+    background-color: #141414;
   color: black;
   margin: 0;
 }
@@ -18,7 +18,7 @@ main{
 
 .header .primary.navigation{
   height: 70px;
-  background-color: black;
+  background-color: #0d0d0d;
   align-items: center;
   padding: 1rem 2rem;
   position: fixed;
@@ -97,7 +97,7 @@ main{
 
 
 /* Slideshow */
-.slideshow-container {
+.slideshow-section {
   max-width: 100%;
   height: 90vh;
   position: relative; 
@@ -136,7 +136,7 @@ main{
 
 .dots {
   position: absolute;
-  bottom: 20px;       /* space from bottom */
+  bottom: 20px;
   width: 100%;
   text-align: center;
 }
@@ -186,6 +186,66 @@ main{
 .prev { left: 0; border-radius: 0 3px 3px 0; }
 .next { right: 0; border-radius: 3px 0 0 3px; }
 
+.prev, .next, .dots{
+  z-index: 10;
+}
+
+.slideshow-label {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: flex-start;
+  text-align: left;
+  color: #fff;
+
+  z-index: 5;
+  padding: 0 5% 0 8%;
+
+  background-image: linear-gradient(to right, hsl(0, 0%, 5%, 1), transparent, transparent);
+}
+
+
+.slideshow-label h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 12px hsl(0,0,0,0.6);
+}
+
+.slideshow-label p {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 10px hsl(0,0,0,.5);
+}
+
+.slideshow.actions{
+  margin-top: 1rem;
+}
+
+.slideshow-label .primary.button {
+  background: #fff;
+  color: #0d0d0d;
+  padding: 0.9rem 1.3rem;
+  border-radius: .6rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 20px hsl(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .slideshow-label {
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 100%;
+  }
+}
+
 
 /* Module */
 .module{
@@ -230,6 +290,10 @@ main{
 
 
 /* Footer */
+footer{
+    background-color: #0d0d0d;
+}
+
 .footer-container{
   max-width: 1200px;
   margin-inline: auto;
@@ -237,6 +301,7 @@ main{
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 24px 48px; 
+
 }
 
 .footer-section .heading {
@@ -259,7 +324,6 @@ main{
 
 .footer-bottom {
     text-align: center;
-    margin: 20px;
     padding: 20px;
     border-top: 1px solid #333333;
     font-size: 13px;
