@@ -1,0 +1,280 @@
+:root {
+    
+  --bg: #111; 
+  --color: #eee;
+  --muted: #bdbdbd;
+  --border: #222;
+
+  --card: #161616;
+  --card_br: #242424;
+
+  --primary_btn: #fff;
+  --btn_text: #000;
+
+  --radius: 16px;
+  --gap: 16px;
+  --pad: 20px;
+}
+
+.packages {
+  color: var(--color);
+  background: var(--bg);
+  padding: 24px clamp(16px, 4vw, 40px);
+  margin-top: 70px;
+}
+
+
+.breadcrumb {
+  font-size: .9rem;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.packages-header {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.packages-header h1 {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  margin: 16px 0 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--color);
+}
+
+.tab.active {
+  background: var(--color);
+  color: #000;
+  border-color: var(--color);
+}
+
+.control-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.sort select {
+  background: var(--card);
+  color: var(--color);
+  border: 1px solid var(--card_br);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.billing-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.billing-toggle .toggle {
+  background: transparent;
+  color: var(--color);
+  border: 0;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.billing-toggle .toggle.active {
+  background: var(--color);
+  color: #000;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card_br);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.badge {
+  font-size: .75rem;
+  padding: 4px 8px;
+  border: 1px solid var(--card_br);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+.features {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.per {
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.primary.button {
+  background: var(--primary_btn);
+  color: var(--btn_text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.secondary.button {
+  border: 1px solid var(--border);
+  color: var(--color);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.compare {
+  color: var(--muted);
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fineprint {
+  color: var(--muted);
+  font-size: .8rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+/* Compare bar */
+.compare-bar {
+  position: sticky;
+  bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--card_br);
+  border-radius: 999px;
+  padding: 10px 12px;
+  max-width: 900px;
+  margin: 24px auto 0;
+}
+
+.compare-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.compare-pill {
+  font-size: .85rem;
+  border: 1px solid var(--card_br);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--muted);
+}
+
+/* FAQ + Help */
+.faq {
+  margin-top: 28px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.faq details {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.help {
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}

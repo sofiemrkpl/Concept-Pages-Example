@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellectro Monochrome</title>
+    <link rel="stylesheet" href="../styles/monochrome_styles.css">
+    <link rel="stylesheet" href="../styles/monochrome_style_packages.css">    
+    <link rel="icon" href="../assets/icons/logo.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <header class="header" id="site-header">
+        <nav class="primary navigation" role="navigation">
+            <div class="logo-container">
+                <a href="../pages/monochrome.html" class="logo">
+                    <img class="logo" role="button" src="../../assets/icons/logo.png" alt="Cellectro Home">
+                </a>                
+            </div>
+
+
+            <ul class="navigation-list">
+                <li class="dropdown"><a href="../pages/monochrome_packages.html">ΣΤΑΘΕΡΟ</a></li>
+                <li class="dropdown"><a href="#">ΚΙΝΗΤΟ</a></li>
+                <li class="dropdown"><a href="#">INTERNET</a></li>
+                <li class="dropdown"><a href="#">ΠΡΟΙΟΝΤΑ</a></li>
+                <li class="dropdown"><a href="#">ΥΠΗΡΕΣΙΕΣ</a></li>
+            </ul>
+
+            <div class="authentication">
+                <a href="#" class="signup">
+                    <img  class="icon" id="profile" src="../../assets/icons/profile.png" alt="Profile Icon">
+                    <span class="label" >Sign up</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="packages">
+    <!-- 1) Page header -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../pages/monochrome.html">Αρχική</a> <span>/</span>
+        <span>Σταθερή & Internet</span>
+    </nav>
+
+    <header class="packages-header">
+        <h1>Σταθερή & Internet – Πακέτα</h1>
+        <p class="subtitle">Απλή επιλογή, καθαρές τιμές, χωρίς εκπλήξεις.</p>
+    </header>
+
+    <!-- 2) Controls row -->
+    <section class="controls" aria-label="Επιλογές">
+        <div class="tabs" role="tablist" aria-label="Κατηγορία">
+        <a class="tab active" role="tab" aria-selected="true" href="landline.html">Σταθερή</a>
+        <a class="tab" role="tab" href="mobile.html">Κινητό</a>
+        <a class="tab" role="tab" href="tv.html">Τηλεόραση</a>
+        </div>
+
+        <div class="control-right">
+        <label class="sort">
+            Ταξινόμηση:
+            <select aria-label="Ταξινόμηση">
+            <option value="price-asc">Τιμή (χαμηλή → υψηλή)</option>
+            <option value="price-desc">Τιμή (υψηλή → χαμηλή)</option>
+            <option value="speed-desc">Ταχύτητα</option>
+            <option value="popularity">Δημοφιλή</option>
+            </select>
+        </label>
+
+        <div class="billing-toggle" role="group" aria-label="Χρέωση">
+            <button class="toggle active" data-bill="monthly">€/μήνα</button>
+            <button class="toggle" data-bill="yearly">€/έτος</button>
+        </div>
+        </div>
+    </section>
+
+    <!-- 3) Packages grid -->
+    <section class="grid" aria-label="Πακέτα">
+        <!-- Card -->
+        <article class="card">
+        <header class="card-head">
+            <h2 class="plan-name">Home 50</h2>
+            <p class="badge">Δημοφιλές</p>
+        </header>
+        <ul class="features">
+            <li>VDSL έως 50 Mbps</li>
+            <li>Απεριόριστα σταθερά</li>
+            <li>300’ προς κινητά</li>
+            <li>Router Wi-Fi 6</li>
+        </ul>
+        <div class="price">
+            <span class="amount" data-month="24.90" data-year="249">€24,90</span>
+            <span class="per">/μήνα</span>
+        </div>
+        <div class="actions">
+            <a class="primary button" href="#">Επιλογή</a>
+            <label class="compare">
+            <input type="checkbox" class="compare-checkbox"> Σύγκριση
+            </label>
+        </div>
+        <footer class="fineprint">12μηνη δέσμευση • Τέλος ενεργοποίησης €0</footer>
+        </article>
+
+        <!-- Duplicate card markup for each plan... -->
+        <article class="card">
+        <header class="card-head">
+            <h2 class="plan-name">Home 100</h2>
+        </header>
+        <ul class="features">
+            <li>VDSL έως 100 Mbps</li>
+            <li>Απεριόριστα σταθερά & κινητά</li>
+            <li>Router Wi-Fi 6</li>
+        </ul>
+        <div class="price">
+            <span class="amount" data-month="29.90" data-year="299">€29,90</span>
+            <span class="per">/μήνα</span>
+        </div>
+        <div class="actions">
+            <a class="primary button" href="#">Επιλογή</a>
+            <label class="compare">
+            <input type="checkbox" class="compare-checkbox"> Σύγκριση
+            </label>
+        </div>
+        <footer class="fineprint">12μηνη δέσμευση</footer>
+        </article>
+
+        <!-- ...add 3–6 cards total -->
+    </section>
+
+    <!-- 4) Sticky compare bar (hidden by default) -->
+    <aside class="compare-bar" aria-live="polite" hidden>
+        <div class="compare-list" aria-label="Επιλεγμένα πακέτα για σύγκριση"></div>
+        <a class="secondary button" href="#">Σύγκριση</a>
+    </aside>
+
+    <!-- 5) FAQ + Help -->
+    <section class="faq">
+        <details>
+        <summary>Υπάρχουν έξοδα ενεργοποίησης;</summary>
+        <p>Σε επιλεγμένα πακέτα είναι μηδενικά. Δες τους όρους κάθε προγράμματος.</p>
+        </details>
+        <details>
+        <summary>Μπορώ να κρατήσω το νούμερό μου;</summary>
+        <p>Ναι, υποστηρίζουμε φορητότητα αριθμού χωρίς χρέωση.</p>
+        </details>
+    </section>
+
+    <section class="help">
+        <h3>Χρειάζεσαι βοήθεια;</h3>
+        <p>Κάλεσε στο 13800 ή <a href="#">μίλησε μαζί μας</a>.</p>
+    </section>
+    </main>
+</body>
+</html>
