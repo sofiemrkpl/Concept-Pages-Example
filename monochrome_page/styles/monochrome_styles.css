@@ -367,12 +367,19 @@ footer { background-color: #0d0d0d; }
   background-color: #333333;
 }
 
+.plans-title{
+  text-align: center;
+  margin: 30px auto 15px;
+  font-size: 2rem;
+}
+
 .grid_cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   align-items: stretch;
-  margin: auto;
+  /* margin: auto; */
+  margin-left: 20px;
 }
 
 .grid_cards .card {

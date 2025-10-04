@@ -1,3 +1,5 @@
+// Home Page Slideshow
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -31,3 +33,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') plusSlides(1);
   if (e.key === 'ArrowLeft') plusSlides(-1);
 });
+
+
+
