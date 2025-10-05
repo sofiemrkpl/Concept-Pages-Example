@@ -55,7 +55,7 @@
 
             <h2 class="availability-title">Συμπλήρωσε τη διεύθυνση ή το σταθερό σου</h2>
 
-            <form class="availability-card" action="#" method="get" novalidate>
+            <form class="availability-card" action="#" method="get" novalidate onsubmit="event.preventDefault(); openPopup();">
 
                 <!-- <fieldset class="toggle-group" aria-label="Τρόπος αναζήτησης">
                 <label class="toggle">
@@ -167,21 +167,25 @@
 
 
                 <div class="fields-grid phone-only" hidden>
-                <div class="field span-2">
-                    <label for="fixed-phone">Σταθερό</label>
-                    <input id="fixed-phone" name="fixed_phone" type="tel" inputmode="tel" placeholder="π.χ. 2101234567" pattern="[0-9]{10}">
-                </div>
+                    <div class="field span-2">
+                        <label for="fixed-phone">Σταθερό</label>
+                        <input id="fixed-phone" name="fixed_phone" type="tel" inputmode="tel" placeholder="π.χ. 2101234567" pattern="[0-9]{10}">
+                    </div>
                 </div>
 
-                <button class="cta" type="submit" onclick="openPopup()" >Έλεγχος</button>
+                <button class="cta" type="submit" >Έλεγχος</button>
+
             </form>
         </section>
         
         <section>
             <div class="popup-overlay" id="popup">
                 <div class="popup">
-                <p>Hello! This is a custom popup box.</p>
-                <button onclick="closePopup()">Close</button>
+                    <p class="popup-info">Το δίκτυο έχει φτάσει σε εσένα!<br>
+                        Διάλεξε το πακέτο που σου ταιριάζει</p>
+                    <a href="../pages/monochrome_internet_packages.html">
+                        <button onclick="closePopup()">Ξεκίνα τώρα</button>
+                    </a>    
                 </div>
             </div>
 

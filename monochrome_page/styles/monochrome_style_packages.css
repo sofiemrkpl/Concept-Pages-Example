@@ -500,17 +500,23 @@ body{
 
 .cta {
   display:block;
+
   width: clamp(180px, 30%, 240px);
+  
   margin: 28px auto 0;
   height: 48px;
   padding: 0 18px;
   font-weight: 700;
   border-radius: calc(var(--radius) + 10px);
+
   background: var(--cta);
   color: var(--cta-ink);
   border: none;
+
   cursor: pointer;
+  
   box-shadow: 0 6px 18px rgba(45, 201, 196, 0.30);
+
   transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
 }
 .cta:hover{
@@ -521,20 +527,6 @@ body{
   transform: translateY(0);
   filter: brightness(.95);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -562,22 +554,6 @@ body{
     justify-content: center;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -683,33 +659,62 @@ body{
 
 /* POP UP */
 .popup-overlay {
-      display: none; /* Hidden by default */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-    }
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
 
-    /* Popup box */
-    .popup {
-      background: #222;
-      color: #eee;
-      padding: 20px 30px;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    }
+.popup{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    .popup button {
-      margin-top: 10px;
-      padding: 6px 14px;
-      border: none;
-      background: #b341d3;
-      color: white;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+  align-items: center;
+  
+  height: 25vh;
+  width: 30vw;
+
+
+  background: #222;
+  color: #eee;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+.popup-info {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 2rem;
+}
+
+.popup button:hover {
+  background: #9a34ba;
+}
+
+.popup button {
+  font-size: 1rem;
+
+  margin: 20px;
+  padding: 10px 20px;
+  
+  border: none;
+  border-radius: 4px;
+
+  background: #b341d3;
+  color: white;
+  cursor: pointer;
+
+
+    transition:  0.3s;
+
+}

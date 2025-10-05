@@ -1,0 +1,152 @@
+:root {
+  --bg: #262626; 
+  --color: #eee;
+  --muted: #bdbdbd;
+  --border: #222;
+
+  --ink: #eaeaea;
+
+  --card: #161616;
+  --card-2: #1b1b1b;
+  --card_br: #242424;
+
+  --primary_btn: #fff;
+  --btn_text: #000;
+  --shadow: 0 8px 24px rgba(0,0,0,.45);
+
+  --radius: 0px;
+  --gap: 16px;
+  --pad: 20px;
+
+  --accent: #b341d3;/*22c55e, #2dc9c1;*/
+  --cta: #2dc9c4;
+  --cta-ink: #0c1b10;
+  --price: #cdcdcd;
+
+
+
+}
+.herf-info{
+    z-index: 1;
+    position: absolute;
+
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-shadow: 4px 4px 4px #111;
+
+}
+
+.herf-info h1{
+    margin-bottom: 1.5rem;
+}
+
+.herf-info#landline{
+    top: 40vh;
+    left: 40vw;  
+}
+
+
+.herf-info#mobile{
+    top: 40vh;
+    left: 57vw; 
+    text-align: right; 
+}
+
+.herf-info#internet{
+    top: 25vh;
+    left: 50vw ;
+    transform: translate(-50%, -50%) ;
+    text-align: center ;
+    width: 80%;
+}
+
+.image-herf{
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.herf-image{
+    
+    width: 80%;
+    display: block;
+    z-index: -1;
+}
+
+
+
+/* Wellcome */
+.welcome-items {
+  background: var(--card);
+  padding: 3rem 1rem;
+}
+
+.item-container {
+  margin: 0 auto;
+}
+
+.item-container > p {
+  color: var(--color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.item{
+    width: 15vw;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--card-2);
+    border: 1px solid rgba(255,255,255,0.06);
+
+    
+    box-shadow:0 1px 0 rgba(255,255,255,0.05) inset,
+
+}
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.25rem;
+  justify-items: center;
+}
+
+.welcome-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+
+  filter: brightness(2) invert(1);
+}
+
+
+/* Text */
+.item-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+/* Link */
+.learn-more {
+  margin-top: .15rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--cta);
+}
+
+.learn-more:hover,
+.learn-more:focus {
+  text-decoration: underline;
+}

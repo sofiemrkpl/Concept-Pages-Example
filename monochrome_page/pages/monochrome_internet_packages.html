@@ -51,131 +51,7 @@
         </section>
 
 
-        <section class="availability-checker" id="availability">
-
-            <h2 class="availability-title">Συμπλήρωσε τη διεύθυνση ή το σταθερό σου</h2>
-
-            <form class="availability-card" action="#" method="get" novalidate>
-
-                <!-- <fieldset class="toggle-group" aria-label="Τρόπος αναζήτησης">
-                <label class="toggle">
-                    <input type="radio" name="mode" value="address" checked>
-                    <span>Αναζήτηση με διεύθυνση</span>
-                </label>
-                <label class="toggle">
-                    <input type="radio" name="mode" value="phone">
-                    <span>Αναζήτηση με τηλεφωνικό αριθμό</span>
-                </label>
-                </fieldset>
-
-                <h2 class="form-title">Συμπλήρωσε τα στοιχεία της διεύθυνσής σου.</h2> -->
-
-
-                <div class="fields-grid" data-mode="address">
-                <div class="field">
-                    <label for="prefecture">Νομός</label>
-                    <div class="select-wrap">
-                    <select id="prefecture" name="prefecture" required>
-                        <option value="" selected disabled>Επίλεξε από τη λίστα</option>
-                        <option value="attica">Αττικής</option>
-                        <option value="east-attica">Ανατολικής Αττικής</option>
-                        <option value="west-attica">Δυτικής Αττικής</option>
-                        <option value="piraeus">Πειραιώς</option>
-
-                        <option value="thessaloniki">Θεσσαλονίκης</option>
-                        <option value="chalkidiki">Χαλκιδικής</option>
-                        <option value="pieria">Πιερίας</option>
-                        <option value="imathia">Ημαθίας</option>
-                        <option value="kilkis">Κιλκίς</option>
-                        <option value="serres">Σερρών</option>
-                        <option value="drama">Δράμας</option>
-                        <option value="kavala">Καβάλας</option>
-                        <option value="xanthi">Ξάνθης</option>
-                        <option value="rodopi">Ροδόπης</option>
-                        <option value="evros">Έβρου</option>
-
-                        <option value="larissa">Λαρίσης</option>
-                        <option value="trikala">Τρικάλων</option>
-                        <option value="karditsa">Καρδίτσας</option>
-                        <option value="magnisia">Μαγνησίας</option>
-                        <option value="evrytania">Ευρυτανίας</option>
-                        <option value="fthiotida">Φθιώτιδας</option>
-                        <option value="fokida">Φωκίδας</option>
-                        <option value="viotia">Βοιωτίας</option>
-                        <option value="evia">Εύβοιας</option>
-
-                        <option value="achaia">Αχαΐας</option>
-                        <option value="ileia">Ηλείας</option>
-                        <option value="messinia">Μεσσηνίας</option>
-                        <option value="laconia">Λακωνίας</option>
-                        <option value="argolis">Αργολίδας</option>
-                        <option value="arcadia">Αρκαδίας</option>
-                        <option value="corinthia">Κορινθίας</option>
-
-                        <option value="ioannina">Ιωαννίνων</option>
-                        <option value="preveza">Πρέβεζας</option>
-                        <option value="thesprotia">Θεσπρωτίας</option>
-                        <option value="arta">Άρτας</option>
-
-                        <option value="kerkira">Κέρκυρας</option>
-                        <option value="lefkas">Λευκάδας</option>
-                        <option value="kefallinia">Κεφαλληνίας</option>
-                        <option value="zakynthos">Ζακύνθου</option>
-
-                        <option value="aetolia-akarnania">Αιτωλοακαρνανίας</option>
-                        <option value="grevena">Γρεβενών</option>
-                        <option value="kastoria">Καστοριάς</option>
-                        <option value="kozani">Κοζάνης</option>
-                        <option value="florina">Φλώρινας</option>
-
-                        <option value="chania">Χανίων</option>
-                        <option value="rethymno">Ρεθύμνου</option>
-                        <option value="heraklion">Ηρακλείου</option>
-                        <option value="lasithi">Λασιθίου</option>
-
-                        <option value="samos">Σάμου</option>
-                        <option value="chios">Χίου</option>
-                        <option value="lesvos">Λέσβου</option>
-                        <option value="kyklades">Κυκλάδων</option>
-                        <option value="dodekanisa">Δωδεκανήσου</option>
-
-
-                    </select>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label for="municipality">Δήμος</label>
-                    <input id="municipality" name="municipality" type="text" inputmode="text" autocomplete="address-level2" placeholder="">
-                </div>
-
-                <div class="field">
-                    <label for="street">Οδός (ή Οικισμός)</label>
-                    <input id="street" name="street" type="text" autocomplete="address-line1" placeholder="">
-                </div>
-
-                <div class="field">
-                    <label for="number">Αριθμός</label>
-                    <input id="number" name="number" type="text" inputmode="numeric" pattern="[0-9]{1,5}" placeholder="">
-                </div>
-
-                <div class="field span-2">
-                    <label for="area">Περιοχή</label>
-                    <input id="area" name="area" type="text" autocomplete="address-level3" placeholder="">
-                </div>
-                </div>
-
-
-                <div class="fields-grid phone-only" hidden>
-                <div class="field span-2">
-                    <label for="fixed-phone">Σταθερό</label>
-                    <input id="fixed-phone" name="fixed_phone" type="tel" inputmode="tel" placeholder="π.χ. 2101234567" pattern="[0-9]{10}">
-                </div>
-                </div>
-
-                <button class="cta" type="submit" onclick="openPopup()" >Έλεγχος</button>
-            </form>
-        </section>
+        
         
         <section>
             <div class="popup-overlay" id="popup">
@@ -196,13 +72,201 @@
             </script>
         </section>
 
+        <section class="packages" aria-labelledby="plans-title">
+        <h2 class="plans-title">Συνδύασε σταθερό, Internet και τηλεόραση!</h2>    
+        <div class="slideshow container">
 
-        
+            <button class="scroll-btn prev" >‹</button>
+            <button class="scroll-btn next" >›</button>
+            
+            <div class="grid_cards"  tabindex="0">
 
-        <!-- <aside class="compare-bar" aria-live="polite" hidden>
-            <div class="compare-list" aria-label="Επιλεγμένα πακέτα για σύγκριση"></div>
-            <a class="secondary button" href="#">Σύγκριση</a>
-        </aside> -->
+                <article class="packages_card">
+                    <div class="card-header">
+                    <h3 class="card-title">Cellectro Home 24</h3>
+                    </div>
+                    <div class="card-info">
+                    <ul class="card-list">
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/wifi.png" alt="internet">
+                            Internet έως 24 Mbps
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/phone-office.png" alt="landline">
+                            Απεριόριστα λεπτά προς σταθερά
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/mobile_button.png" alt="mobile">
+                            200 λεπτά προς κινητά
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/router-wifi.png" alt="mobile">
+                            Δωρεάν router τελευταίας τεχνολογίας
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="card-footer">
+                    <p class="card-price"><span class="amount">21,90€</span><span class="per">/το μήνα</span></p>
+                    <a href="#" class="card_button">Απόκτησέ το</a>
+                    </div>
+                </article>
+
+                <article class="packages_card">
+                    <div class="card-header">
+                    <h3 class="card-title">Cellectro Home 50</h3>
+                    </div>
+                    <div class="card-info">
+                    <ul class="card-list">
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/wifi.png" alt="internet">
+                            Internet έως 50 Mbps
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/phone-office.png" alt="landline">
+                            Απεριόριστα λεπτάπρος σταθερά
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/mobile_button.png" alt="mobile">
+                            500 λεπτά προς κινητά
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/router-wifi.png" alt="mobile">
+                            Δωρεάν router τελευταίας τεχνολογίας
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="card-footer">
+                    <p class="card-price"><span class="amount">26,90€</span><span class="per">/το μήνα</span></p>
+                    <a href="#" class="card_button">Απόκτησέ το</a>
+                    </div>
+                </article>
+
+                <article class="packages_card">
+                    <div class="card-header">
+                    <h3 class="card-title">CELLECTRO FIBER 100 XL</h3>
+                    </div>
+                    <div class="card-info">
+                    <ul class="card-list">
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/wifi.png" alt="internet">
+                            Internet 100 Mbps εγγυημένη
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/phone-office.png" alt="landline">
+                            Απεριόριστα λεπτάπρος σταθερά
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/mobile_button.png" alt="mobile">
+                            500 λεπτάπρος κινητά
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/router-wifi.png" alt="mobile">
+                            Δωρεάν router τελευταίας τεχνολογίας
+                        </li>                        
+                    </ul>
+                    </div>
+                    <div class="card-footer">
+                    <p class="card-price"><span class="amount">44,90€</span><span class="per">/το μήνα</span></p>
+                    <a href="#" class="card_button">Απόκτησέ το</a>
+                    </div>
+                </article>
+                
+                <article class="packages_card">
+                    <div class="card-header">
+                    <h3 class="card-title">CELLECTRO FIBER 200</h3>
+                    </div>
+                    <div class="card-info">
+                    <ul class="card-list">
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/wifi.png" alt="internet">
+                            Internet 200 Mbps
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/phone-office.png" alt="landline">
+                            Απεριόριστα λεπτά προς σταθερά
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/mobile_button.png" alt="mobile">
+                            Απεριόριστα λεπτά προς κινητά
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/router-wifi.png" alt="mobile">
+                            Δωρεάν router τελευταίας τεχνολογίας
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/tv.png" alt="mobile">
+                            ΔΩΡΟ Cellectro TV Start
+                        </li>                                                 
+                    </ul>
+                    </div>
+                    <div class="card-footer">
+                    <p class="card-price"><span class="amount">54,90€</span><span class="per">/το μήνα</span></p>
+                    <a href="#" class="card_button">Απόκτησέ το</a>
+                    </div>
+                </article>                
+
+                <article class="packages_card">
+                    <div class="card-header">
+                    <h3 class="card-title">CELLECTRO FIBER 500</h3>
+                    </div>
+                    <div class="card-info">
+                    <ul class="card-list">
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/wifi.png" alt="internet">
+                            Internet 500 Mbps με 100% οπτική ινα
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/phone-office.png" alt="landline">
+                            Απεριόριστα λεπτά προς σταθερά
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/mobile_button.png" alt="mobile">
+                            Απεριόριστα λεπτά προς κινητά
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/router-wifi.png" alt="mobile">
+                            Δωρεάν router τελευταίας τεχνολογίας
+                        </li>               
+                        <li class="feature"><img class="card-icons" src="../assets/icons/tv.png" alt="mobile">
+                            ΔΩΡΟ Cellectro TV Start
+                        </li>                                 
+                    </ul>
+                    </div>
+                    <div class="card-footer">
+                    <p class="card-price"><span class="amount">59,90€</span><span class="per">/το μήνα</span></p>
+                    <a href="#" class="card_button">Απόκτησέ το</a>
+                    </div>
+                </article>
+
+                <article class="packages_card">
+                    <div class="card-header">
+                    <h3 class="card-title">Cellectro Student</h3>
+                    </div>
+                    <div class="card-info">
+                    <ul class="card-list">
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/wifi.png" alt="internet">
+                            Internet έως 25 Mbps
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/phone-office.png" alt="landline">
+                            200 λεπτά προς σταθερά
+                        </li>
+                        <li class="feature">
+                            <img class="card-icons" src="../assets/icons/mobile_button.png" alt="mobile">
+                            100 λεπτά προς κινητά
+                        </li>
+                        <li class="feature"><img class="card-icons" src="../assets/icons/router-wifi.png" alt="mobile">
+                            Δωρεάν router τελευταίας τεχνολογίας
+                        </li>               
+                        <li class="feature"><img class="card-icons" src="../assets/icons/student.png" alt="mobile">
+                            Φοιτητική Προσφορά
+                        </li>                                 
+                    </ul>
+                    </div>
+                    <div class="card-footer">
+                    <p class="card-price"><span class="amount">59,90€</span><span class="per">/το μήνα</span></p>
+                    <a href="#" class="card_button">Απόκτησέ το</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+        </section>
 
         <section class="faq">
             <details class="details">

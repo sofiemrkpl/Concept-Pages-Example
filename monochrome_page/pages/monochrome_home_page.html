@@ -10,12 +10,51 @@
 </head>
 <body>
 
-    <div id="header"></div>
-    <script>
-    fetch("../pages/monochrome_header.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("header").innerHTML = data);
-    </script>
+<header class="header" id="site-header">
+        <nav class="primary navigation" role="navigation">
+            <div class="logo-container">
+                <a href="../pages/monochrome_home_page.html" class="logo">
+                    <img class="logo" role="button" src="../../assets/icons/logo.png" alt="Cellectro Home">
+                </a>                
+            </div>
+
+
+            <ul class="navigation-list">
+                <li class="dropdown">
+                    <a href="../pages/monochrome_landline_packages.html">ΣΤΑΘΕΡΟ</a>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="../pages/monochrome_mobile_packages.html">ΚΙΝΗΤΟ</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="../pages/monochrome_internet_form.html">INTERNET</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/monochrome_internet_form.html">Διαθεσιμότητα</a></li>
+                        <li><a href="../pages/monochrome_internet_packages.html">Πακέτα Internet</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="../pages/monochrome_product.html">ΠΡΟΙΟΝΤΑ</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="../pages/monochrome_services.html">ΥΠΗΡΕΣΙΕΣ</a>
+                </li>
+            </ul>
+
+            <div class="cart-section">
+                <a href="#" class="cart">
+                    <img  class="icon"  src="../assets/icons/cart.png" alt="Cart Icon">
+                    <span class="label" >Καλάθι</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
 
     <main>
         <section class="slideshow-section" >
@@ -52,12 +91,13 @@
 
             <div class="slideshow-label">
                 <div class="slideshow title">
+                    <h1 id="slideshow-title">Cellectro<br></h1>
                     <h1 id="slideshow-title">ΣΥΝΔΕΣΗ ΧΩΡΙΣ ΟΡΙΑ <br>ΜΕ ΤΟ ΤΑΧΥΤΕΡΟ ΔΥΚΤΙΟ <BR> ΣΤΗΝ ΕΛΛΑΔΑ</h1>
                     <p>Σταθερή και κινητή τηλεφωνία με τα πιο σύγχρονα πακέτα, <br> προσαρμοσμένα στις ανάγκες σας.</p>
                 </div>
 
                 <div class="slideshow actions">
-                    <a href="#" class="primary button" id="hero_btn1" role="button">Βρές το πακέτο που σου ταιριάζει</a>
+                    <a href="../pages/monochrome_welcome_page.html" class="primary button" id="hero_btn1" role="button">Βρές το πακέτο που σου ταιριάζει</a>
                     <!-- <a href="#" class="secondary button" id="hero_btn2" role="button">Δες την κάλυψή σου</a> -->
                 </div>   
             </div>          
