@@ -64,11 +64,12 @@ main {
   margin: 0;
 }
 
-.authentication {
+.cart-section {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
+
 
 .primary.navigation .dropdown a {
   color: var(--primary_btn);
@@ -94,18 +95,22 @@ main {
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
+  max-width: 22px;
+
   cursor: pointer;
 }
 
-.signup {
+.cart {
   display: flex;
   align-items: center;
   text-decoration: none;
   background: none;
+
   color: var(--primary_btn);
   gap: 1rem;
+
+  font-size: 1.2rem;
+
 }
 
 /* Slideshow */

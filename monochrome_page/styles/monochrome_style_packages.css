@@ -41,12 +41,23 @@ body{
 .herf-info{
   z-index: 1;
   position: absolute;
-  top: 40vh;
-  left: 40vw;
+
   font-weight: 600;
   font-size: 1.8rem;
   text-shadow: 2px 2px 4px #111;
 }
+
+.herf-info#landline{
+  top: 40vh;
+  left: 40vw;  
+}
+
+
+.herf-info#mobile{
+  top: 40vh;
+  left: 57vw;  
+}
+
 .fiber-image{
   width: 100%;
   max-height: 70vh;
@@ -54,7 +65,6 @@ body{
   position: relative;
   z-index: -1;
 }
-
 
 
 .secondary.button{
