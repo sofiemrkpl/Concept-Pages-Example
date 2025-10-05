@@ -82,7 +82,7 @@
 /* Wellcome */
 .welcome-items {
   background: var(--card);
-  padding: 3rem 1rem;
+  padding: 5rem 2rem;
 }
 
 .welcome-info{
@@ -107,33 +107,34 @@
   color: transparent;
   position: relative;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 
 .item{
-    width: 15vw;
-    aspect-ratio: 1 / 1;
+  width: 12vw;
+  aspect-ratio: 1 / 1;
 
-    display: grid;
-    /* flex-direction: column; */
-    align-items: center;
-    /* justify-content: space-between; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    background-color: var(--card-2);
-    border: 1px solid rgba(255,255,255,0.06);
+  background-color: var(--card-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow:0 1px 0 rgba(255,255,255,0.05) inset;
 
-    
-    box-shadow:0 1px 0 rgba(255,255,255,0.05) inset,
 
 }
 
 .item-grid {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: space-around;
 
-  gap: 1.25rem;
+  gap: 2rem;
   justify-items: center;
+  margin: 2rem;
 }
 
 .welcome-icon {
@@ -141,13 +142,14 @@
   height: 64px;
   object-fit: contain;
   display: block;
-
   filter: brightness(2) invert(1);
+  margin-top: 1.5rem;
+  
 }
 
 
 .item-title {
-  margin: 0;
+  margin: 1rem;
   font-size: 1.05rem;
   font-weight: 800;
   color: var(--muted);
