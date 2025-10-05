@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellectro Monochrome</title>
+    <link rel="stylesheet" href="../styles/monochrome_styles.css">
+    <link rel="stylesheet" href="../styles/monochrome_style_packages.css">    
+    <link rel="icon" href="../assets/icons/logo.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <header class="header" id="site-header">
+        <nav class="primary navigation" role="navigation">
+            <div class="logo-container">
+                <a href="../pages/monochrome_home_page.html" class="logo">
+                    <img class="logo" role="button" src="../../assets/icons/logo.png" alt="Cellectro Home">
+                </a>                
+            </div>
+
+
+            <ul class="navigation-list">
+                <li class="dropdown"><a href="../pages/monochrome_landline_packages.html">ΣΤΑΘΕΡΟ</a></li>
+                <li class="dropdown"><a href="../pages/monochrome_mobile_packages.html">ΚΙΝΗΤΟ</a></li>
+                <li class="dropdown"><a href="../pages/monochrome_internet_form.html">INTERNET</a></li>
+                <li class="dropdown"><a href="../pages/monochrome_product.html">ΠΡΟΙΟΝΤΑ</a></li>
+                <li class="dropdown"><a href="../pages/monochrome_services.html">ΥΠΗΡΕΣΙΕΣ</a></li>
+            </ul>
+
+            <div class="cart-section">
+                <a href="#" class="cart">
+                    <img  class="icon"  src="../assets/icons/cart.png" alt="Cart Icon">
+                    <span class="label" >Καλάθι</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <main class="main">
+
+        <section class="image-herf" id="internet">
+            <div class="herf-info" id="internet">
+            <h1 class="herf-title">Έλεγξε το δίκτυό σου με ένα κλικ! </h1>
+            <p class="herf-text">Δες άμεσα τις επιλογές σύνδεσης της Cellectro.</p>
+            </div>
+
+            <img class="fiber-image" src="../assets/images/routed.jpg" alt="fiber image">
+        </section>
+
+
+        <section class="availability-checker" id="availability">
+
+            <h2 class="availability-title">Συμπλήρωσε τη διεύθυνση ή το σταθερό σου</h2>
+
+            <form class="availability-card" action="#" method="get" novalidate>
+
+                <!-- <fieldset class="toggle-group" aria-label="Τρόπος αναζήτησης">
+                <label class="toggle">
+                    <input type="radio" name="mode" value="address" checked>
+                    <span>Αναζήτηση με διεύθυνση</span>
+                </label>
+                <label class="toggle">
+                    <input type="radio" name="mode" value="phone">
+                    <span>Αναζήτηση με τηλεφωνικό αριθμό</span>
+                </label>
+                </fieldset>
+
+                <h2 class="form-title">Συμπλήρωσε τα στοιχεία της διεύθυνσής σου.</h2> -->
+
+
+                <div class="fields-grid" data-mode="address">
+                <div class="field">
+                    <label for="prefecture">Νομός</label>
+                    <div class="select-wrap">
+                    <select id="prefecture" name="prefecture" required>
+                        <option value="" selected disabled>Επίλεξε από τη λίστα</option>
+                        <option value="attica">Αττικής</option>
+                        <option value="east-attica">Ανατολικής Αττικής</option>
+                        <option value="west-attica">Δυτικής Αττικής</option>
+                        <option value="piraeus">Πειραιώς</option>
+
+                        <option value="thessaloniki">Θεσσαλονίκης</option>
+                        <option value="chalkidiki">Χαλκιδικής</option>
+                        <option value="pieria">Πιερίας</option>
+                        <option value="imathia">Ημαθίας</option>
+                        <option value="kilkis">Κιλκίς</option>
+                        <option value="serres">Σερρών</option>
+                        <option value="drama">Δράμας</option>
+                        <option value="kavala">Καβάλας</option>
+                        <option value="xanthi">Ξάνθης</option>
+                        <option value="rodopi">Ροδόπης</option>
+                        <option value="evros">Έβρου</option>
+
+                        <option value="larissa">Λαρίσης</option>
+                        <option value="trikala">Τρικάλων</option>
+                        <option value="karditsa">Καρδίτσας</option>
+                        <option value="magnisia">Μαγνησίας</option>
+                        <option value="evrytania">Ευρυτανίας</option>
+                        <option value="fthiotida">Φθιώτιδας</option>
+                        <option value="fokida">Φωκίδας</option>
+                        <option value="viotia">Βοιωτίας</option>
+                        <option value="evia">Εύβοιας</option>
+
+                        <option value="achaia">Αχαΐας</option>
+                        <option value="ileia">Ηλείας</option>
+                        <option value="messinia">Μεσσηνίας</option>
+                        <option value="laconia">Λακωνίας</option>
+                        <option value="argolis">Αργολίδας</option>
+                        <option value="arcadia">Αρκαδίας</option>
+                        <option value="corinthia">Κορινθίας</option>
+
+                        <option value="ioannina">Ιωαννίνων</option>
+                        <option value="preveza">Πρέβεζας</option>
+                        <option value="thesprotia">Θεσπρωτίας</option>
+                        <option value="arta">Άρτας</option>
+
+                        <option value="kerkira">Κέρκυρας</option>
+                        <option value="lefkas">Λευκάδας</option>
+                        <option value="kefallinia">Κεφαλληνίας</option>
+                        <option value="zakynthos">Ζακύνθου</option>
+
+                        <option value="aetolia-akarnania">Αιτωλοακαρνανίας</option>
+                        <option value="grevena">Γρεβενών</option>
+                        <option value="kastoria">Καστοριάς</option>
+                        <option value="kozani">Κοζάνης</option>
+                        <option value="florina">Φλώρινας</option>
+
+                        <option value="chania">Χανίων</option>
+                        <option value="rethymno">Ρεθύμνου</option>
+                        <option value="heraklion">Ηρακλείου</option>
+                        <option value="lasithi">Λασιθίου</option>
+
+                        <option value="samos">Σάμου</option>
+                        <option value="chios">Χίου</option>
+                        <option value="lesvos">Λέσβου</option>
+                        <option value="kyklades">Κυκλάδων</option>
+                        <option value="dodekanisa">Δωδεκανήσου</option>
+
+
+                    </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="municipality">Δήμος</label>
+                    <input id="municipality" name="municipality" type="text" inputmode="text" autocomplete="address-level2" placeholder="">
+                </div>
+
+                <div class="field">
+                    <label for="street">Οδός (ή Οικισμός)</label>
+                    <input id="street" name="street" type="text" autocomplete="address-line1" placeholder="">
+                </div>
+
+                <div class="field">
+                    <label for="number">Αριθμός</label>
+                    <input id="number" name="number" type="text" inputmode="numeric" pattern="[0-9]{1,5}" placeholder="">
+                </div>
+
+                <div class="field span-2">
+                    <label for="area">Περιοχή</label>
+                    <input id="area" name="area" type="text" autocomplete="address-level3" placeholder="">
+                </div>
+                </div>
+
+
+                <div class="fields-grid phone-only" hidden>
+                <div class="field span-2">
+                    <label for="fixed-phone">Σταθερό</label>
+                    <input id="fixed-phone" name="fixed_phone" type="tel" inputmode="tel" placeholder="π.χ. 2101234567" pattern="[0-9]{10}">
+                </div>
+                </div>
+
+                <button class="cta" type="submit" onclick="openPopup()" >Έλεγχος</button>
+            </form>
+        </section>
+        
+        <section>
+            <div class="popup-overlay" id="popup">
+                <div class="popup">
+                <p>Hello! This is a custom popup box.</p>
+                <button onclick="closePopup()">Close</button>
+                </div>
+            </div>
+
+            <script>
+                function openPopup() {
+                document.getElementById("popup").style.display = "flex";
+                }
+
+                function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                }
+            </script>
+        </section>
+
+
+        
+
+        <!-- <aside class="compare-bar" aria-live="polite" hidden>
+            <div class="compare-list" aria-label="Επιλεγμένα πακέτα για σύγκριση"></div>
+            <a class="secondary button" href="#">Σύγκριση</a>
+        </aside> -->
+
+        <section class="faq">
+            <details class="details">
+                <summary class="summary">Υπάρχουν έξοδα ενεργοποίησης;</summary>
+                <div class="answer">
+                <p>Σε επιλεγμένα πακέτα είναι μηδενικά. Δες τους όρους κάθε προγράμματος.</p>
+                </div>
+            </details>
+
+            <details class="details">
+                <summary class="summary">Μπορώ να κρατήσω το νούμερό μου;</summary>
+                <div class="answer">
+                <p>Ναι, υποστηρίζουμε φορητότητα αριθμού χωρίς χρέωση.</p>
+                </div>
+            </details>
+        </section>
+
+        <section class="help">
+        <h3>Χρειάζεσαι βοήθεια;</h3>
+        <p>Κάλεσε στο 13800 ή <a href="#">μίλησε μαζί μας</a>.</p>
+        </section>
+
+    </main>
+    
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <div class="footer-section">
+                <h4 class="heading">Εταιρεία</h4>
+                <ul>
+                    <li><a href="#">Σχετικά με εμάς</a></li>
+                    <li><a href="#">Νέα & Ανακοινώσεις</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-section">
+                <h4 class="heading">Υποστήριξη</h4>
+                <ul>
+                    <li><a href="#">Επικοινωνία</a></li>
+                    <li><a href="#">Καταστήματα</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="heading">Υπηρεσίες</h4>
+                <ul>
+                    <li><a href="#">Τηλεφωνία</a></li>
+                    <li><a href="#">Internet</a></li>
+                    <li><a href="#">Τηλεόραση</a></li>
+                    <li><a href="#">Επιχειρήσεις</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="heading">Ακολουθήστε μας</h4>
+                <ul class="social-icons">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter </a></li>
+                </ul>
+            </div>
+                
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cellectro. Όλα τα δικαιώματα διατηρούνται.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript: go up one level to js scripts/ -->
+    <script src="../scripts/monochrome_packages_script.js"></script>
+
+</body>
+</html>
