@@ -58,6 +58,14 @@ body{
   left: 57vw;  
 }
 
+.herf-info#internet{
+  top: 25vh;
+  left: 50vw ;
+  transform: translate(-50%, -50%) ;
+  text-align: center ;
+  width: 80%;
+}
+
 .fiber-image{
   width: 100%;
   max-height: 70vh;
