@@ -360,7 +360,7 @@ body{
   justify-content:center;
   padding:.8rem 1.1rem;
   border-radius:12px;
-  background: var(--accent);
+  background: var(--cta);
   color: var(--cta-ink);
   text-decoration:none; 
   font-weight:800;
