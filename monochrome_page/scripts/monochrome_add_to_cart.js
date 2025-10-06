@@ -34,6 +34,6 @@ document.querySelectorAll('.card_button').forEach(button => {
     cart.push(plan);
     saveCart(cart);
 
-    window.location.href = '../pages/monochrome_cart.html';
+   event.preventDefault(); openPopup();
   });
 });

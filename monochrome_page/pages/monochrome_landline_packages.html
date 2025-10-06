@@ -233,7 +233,7 @@
 
                 <article class="packages_card" data-type="landline" data-name="Cellectro Student">
                     <div class="card-header">
-                    <h3 class="card-title">Cellectro Student</h3>
+                    <h3 class="card-title">Cellectro Student</hd3>
                     </div>
                     <div class="card-info">
                     <ul class="card-list">
@@ -267,6 +267,29 @@
             </div>
         </div>
 
+        <section>
+            <div class="popup-overlay" id="popup">
+                <div class="popup">
+                    <p class="popup-info">Το πακέτο προστέθηκε στο καλάθι</p>
+                    <a href="#">
+                        Συνέχισε τις αγορές σου
+                    </a>    
+                    <a href="../pages/monochrome_cart.html">
+                        <button onclick="closePopup()">Δες το καλάθι σου</button>
+                    </a> 
+                </div>
+            </div>
+
+            <script>
+                function openPopup() {
+                document.getElementById("popup").style.display = "flex";
+                }
+
+                function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                }
+            </script>
+        </section>        
 
         </section>
 

@@ -130,6 +130,30 @@
 
         </section>
 
+        <section>
+            <div class="popup-overlay" id="popup">
+                <div class="popup">
+                    <p class="popup-info">Το πακέτο προστέθηκε στο καλάθι</p>
+                    <a href="#">
+                        Συνέχισε τις αγορές σου
+                    </a>    
+                    <a href="../pages/monochrome_cart.html">
+                        <button onclick="closePopup()">Δες το καλάθι σου</button>
+                    </a> 
+                </div>
+            </div>
+
+            <script>
+                function openPopup() {
+                document.getElementById("popup").style.display = "flex";
+                }
+
+                function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                }
+            </script>
+        </section>          
+
         <section class="popular plans" aria-labelledby="plans-title">
             <div class="cards-container">
                 <h2 id="plans_title" class="polular-title">Μπορεί να σε ενδιαφέρουν:</h2>
