@@ -5,89 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cellectro Monochrome</title>
     <link rel="stylesheet" href="../styles/monochrome_styles.css">
-    <link rel="stylesheet" href="../styles/monochrome_welcome_style.css">    
+    <link rel="stylesheet" href="../styles/monochrome_checkout.css">    
     <link rel="icon" href="../assets/icons/logo.png" type="image/x-icon">
 
 </head>
 <body>
 
-<header class="header" id="site-header">
-        <nav class="primary navigation" role="navigation">
-            <div class="logo-container">
-                <a href="../pages/monochrome_home_page.html" class="logo">
-                    <img class="logo" role="button" src="../../assets/icons/logo.png" alt="Cellectro Home">
-                </a>                
+
+
+    <header class="header" id="site-header">
+            <nav class="primary navigation" role="navigation">
+                <div class="logo-container">
+                    <a href="../pages/monochrome_home_page.html" class="logo">
+                        <img class="logo" role="button" src="../../assets/icons/logo.png" alt="Cellectro Home">
+                    </a>                
+                </div>
+
+
+                <ul class="navigation-list">
+                    <li class="dropdown">
+                        <a href="../pages/monochrome_landline_packages.html">ΣΤΑΘΕΡΟ</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="../pages/monochrome_mobile_packages.html">ΚΙΝΗΤΟ</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="../pages/monochrome_internet_form.html">INTERNET</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../pages/monochrome_internet_form.html">Διαθεσιμότητα</a></li>
+                            <li><a href="../pages/monochrome_internet_packages.html">Πακέτα Internet</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="../pages/monochrome_tv.html">ΤΗΛΕΟΡΑΣΗ</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="../pages/monochrome_services.html">ΥΠΗΡΕΣΙΕΣ</a>
+                    </li>
+                </ul>
+
+                <div class="cart-section">
+                    <a href="../pages/monochrome_cart.html" class="cart">
+                        <img  class="icon"  src="../assets/icons/cart.png" alt="Cart Icon">
+                        <span class="label" >Καλάθι</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+    <main class="main">   
+        <section class="checkout-grid">
+            <h2 class="checkout-header">Καλάθι</h2>
+
+            <div class="checkout-items">
+
+                <div class="empty-state">
+                    <h3 class="empty-title">Το καλάθι είναι άδειο</h3>
+
+
+                </div> 
+                
             </div>
+            
+            <div class="cart-sum">
+
+                <div class="total-price">
+                    <h3 class="total-price-title">Σύνοψη καλαθιού</h3>
 
 
-            <ul class="navigation-list">
-                <li class="dropdown">
-                    <a href="../pages/monochrome_landline_packages.html">ΣΤΑΘΕΡΟ</a>
+                    <div class="price-sum">
 
-                </li>
+                        <article class="price-sum-box">
+                            <h4 class="sum-box-title">Τελη</h4>
+                            <p class="sum-box-price">-</p>
+                        </article>
 
-                <li class="dropdown">
-                    <a href="../pages/monochrome_mobile_packages.html">ΚΙΝΗΤΟ</a>
-                </li>
+                        <article class="price-sum-box">
+                            <h4 class="sum-box-title">Εφαπαξ Χρέωση</h4>
+                            <p class="sum-box-price">-</p>
+                        </article>                        
 
-                <li class="dropdown">
-                    <a href="../pages/monochrome_internet_form.html">INTERNET</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../pages/monochrome_internet_form.html">Διαθεσιμότητα</a></li>
-                        <li><a href="../pages/monochrome_internet_packages.html">Πακέτα Internet</a></li>
+                        <article class="price-sum-box">
+                            <h4 class="sum-box-title">Μηνιαίο Πάγιο</h4>
+                            <p class="sum-box-price">-</p>
+                        </article>
+                    </div>
+
+                    <button class="btn-cta" type="button">Προς Checkout</button>
+
+                    <ul>
+                        <li>Δωρεάν παράδοση παραγγελίας</li>
+                        <li>Παρακολούθηση παραγγελίας</li>
+                        <li>Δωρεάν επιστροφές</li>
+                        <li>Έως 48 άτοκες δόσεις</li>
                     </ul>
-                </li>
+                </div>
 
-                <li class="dropdown">
-                    <a href="../pages/monochrome_tv.html">ΤΗΛΕΟΡΑΣΗ</a>
-                </li>
+                <div class="keep-shopping">
+                    <a href="../pages/monochrome_home_page.html" class="cart">
+                        <img  class="shopping-icon"  src="../assets/icons/arrow-small-left.png" alt="Cart Icon">
+                        <span class="shopping-label" >Συνέχισε τις αγορές σου</span>
+                    </a>
+                </div>
 
-                <li class="dropdown">
-                    <a href="../pages/monochrome_services.html">ΥΠΗΡΕΣΙΕΣ</a>
-                </li>
-            </ul>
-
-            <div class="cart-section">
-                <a href="../pages/monochrome_cart.html" class="cart">
-                    <img  class="icon"  src="../assets/icons/cart.png" alt="Cart Icon">
-                    <span class="label" >Καλάθι</span>
-                </a>
             </div>
-        </nav>
-    </header>
 
+        </section>
 
-    <section class="checkout-grid">
-        <div class="checkout-items">
-            <article class="cart-item">
+    </main>    
 
-            </article>
-
-        </div>
-
-        <div class="cart-sum">
-
-        </div>
-
-        <p class="">
-            <ul>
-                <li>Δωρεάν παράδοση παραγγελίας</li>
-                <li>Παρακολούθηση παραγγελίας</li>
-                <li>Δωρεάν επιστροφές</li>
-                <li>Έως 48 άτοκες δόσεις</li>
-            </ul>
-        </p>
-                  
-        <a href="../pages/monochrome_internet_packages.html">
-            <button href="../pages/monochrome_home_page.html">
-                Ξεκίνα τώρα
-            </button>
-        </a>  
-    </section>
-
-
-
-    
+        
     <footer class="site-footer">
         <div class="footer-container">
             

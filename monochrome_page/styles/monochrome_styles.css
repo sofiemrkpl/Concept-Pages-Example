@@ -70,7 +70,6 @@ main {
   align-items: center;
 }
 
-
 .primary.navigation .dropdown a {
   color: var(--primary_btn);
   text-decoration: none;
@@ -96,7 +95,6 @@ main {
 
 .icon {
   max-width: 22px;
-
   cursor: pointer;
 }
 
@@ -110,7 +108,11 @@ main {
   gap: 1rem;
 
   font-size: 1.2rem;
+}
 
+#cart{
+  filter: brightness(2) invert(1);
+  max-height: 24px;
 }
 
 /* Dropdown*/
