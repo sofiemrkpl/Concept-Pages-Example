@@ -6,7 +6,9 @@
     <title>Cellectro Monochrome</title>
     <link rel="stylesheet" href="../styles/monochrome_styles.css">
     <link rel="stylesheet" href="../styles/monochrome_cart_style.css">    
-    <link rel="stylesheet" href="../styles/monochrome_cart_items_styles.css">    
+    <link rel="stylesheet" href="../styles/monochrome_cart_items_styles.css">
+    <link rel="stylesheet" href="../styles/monochrome_popup_styles.css">  
+    <link rel="stylesheet" href="../styles/monochrome_form_styles.css">  
 
     <link rel="icon" href="../assets/icons/logo.png" type="image/x-icon">
 
@@ -103,7 +105,7 @@
                         </article>
                     </div>
 
-                    <button class="btn-cta" type="button">Checkout</button>
+                    <button class="btn-cta" type="button" onclick="openPopup();">Checkout</button>
 
                     <ul class="perks">
                         <li><span><img class="check-icon" src="../assets/icons/check.png " alt="check"></span>
@@ -133,14 +135,120 @@
         <section>
             <div class="popup-overlay" id="popup">
                 <div class="popup">
-                    <p class="popup-info">Το πακέτο προστέθηκε στο καλάθι</p>
-                    <a href="#">
-                        Συνέχισε τις αγορές σου
-                    </a>    
-                    <a href="../pages/monochrome_cart.html">
-                        <button onclick="closePopup()">Δες το καλάθι σου</button>
-                    </a> 
+        <section class="availability-checker" id="availability">
+
+            <h2 class="availability-title">Συμπλήρωσε τη διεύθυνση ή το σταθερό σου</h2>
+
+            <form class="availability-card" action="#" method="get" novalidate onsubmit="event.preventDefault(); openPopup();">
+
+                <div class="fields-grid" data-mode="address">
+                    <div class="field">
+                        <label for="prefecture">Νομός</label>
+                            <div class="select-wrap">
+                                <select id="prefecture" name="prefecture" required>
+                                    <option value="" selected disabled>Επίλεξε από τη λίστα</option>
+                                    <option value="attica">Αττικής</option>
+                                    <option value="east-attica">Ανατολικής Αττικής</option>
+                                    <option value="west-attica">Δυτικής Αττικής</option>
+                                    <option value="piraeus">Πειραιώς</option>
+
+                                    <option value="thessaloniki">Θεσσαλονίκης</option>
+                                    <option value="chalkidiki">Χαλκιδικής</option>
+                                    <option value="pieria">Πιερίας</option>
+                                    <option value="imathia">Ημαθίας</option>
+                                    <option value="kilkis">Κιλκίς</option>
+                                    <option value="serres">Σερρών</option>
+                                    <option value="drama">Δράμας</option>
+                                    <option value="kavala">Καβάλας</option>
+                                    <option value="xanthi">Ξάνθης</option>
+                                    <option value="rodopi">Ροδόπης</option>
+                                    <option value="evros">Έβρου</option>
+
+                                    <option value="larissa">Λαρίσης</option>
+                                    <option value="trikala">Τρικάλων</option>
+                                    <option value="karditsa">Καρδίτσας</option>
+                                    <option value="magnisia">Μαγνησίας</option>
+                                    <option value="evrytania">Ευρυτανίας</option>
+                                    <option value="fthiotida">Φθιώτιδας</option>
+                                    <option value="fokida">Φωκίδας</option>
+                                    <option value="viotia">Βοιωτίας</option>
+                                    <option value="evia">Εύβοιας</option>
+
+                                    <option value="achaia">Αχαΐας</option>
+                                    <option value="ileia">Ηλείας</option>
+                                    <option value="messinia">Μεσσηνίας</option>
+                                    <option value="laconia">Λακωνίας</option>
+                                    <option value="argolis">Αργολίδας</option>
+                                    <option value="arcadia">Αρκαδίας</option>
+                                    <option value="corinthia">Κορινθίας</option>
+
+                                    <option value="ioannina">Ιωαννίνων</option>
+                                    <option value="preveza">Πρέβεζας</option>
+                                    <option value="thesprotia">Θεσπρωτίας</option>
+                                    <option value="arta">Άρτας</option>
+
+                                    <option value="kerkira">Κέρκυρας</option>
+                                    <option value="lefkas">Λευκάδας</option>
+                                    <option value="kefallinia">Κεφαλληνίας</option>
+                                    <option value="zakynthos">Ζακύνθου</option>
+
+                                    <option value="aetolia-akarnania">Αιτωλοακαρνανίας</option>
+                                    <option value="grevena">Γρεβενών</option>
+                                    <option value="kastoria">Καστοριάς</option>
+                                    <option value="kozani">Κοζάνης</option>
+                                    <option value="florina">Φλώρινας</option>
+
+                                    <option value="chania">Χανίων</option>
+                                    <option value="rethymno">Ρεθύμνου</option>
+                                    <option value="heraklion">Ηρακλείου</option>
+                                    <option value="lasithi">Λασιθίου</option>
+
+                                    <option value="samos">Σάμου</option>
+                                    <option value="chios">Χίου</option>
+                                    <option value="lesvos">Λέσβου</option>
+                                    <option value="kyklades">Κυκλάδων</option>
+                                    <option value="dodekanisa">Δωδεκανήσου</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="municipality">Δήμος</label>
+                        <input id="municipality" name="municipality" type="text" inputmode="text" autocomplete="address-level2" placeholder="">
+                    </div>
+
+                    <div class="field">
+                        <label for="street">Οδός (ή Οικισμός)</label>
+                        <input id="street" name="street" type="text" autocomplete="address-line1" placeholder="">
+                    </div>
+
+                    <div class="field">
+                        <label for="number">Αριθμός</label>
+                        <input id="number" name="number" type="text" inputmode="numeric" pattern="[0-9]{1,5}" placeholder="">
+                    </div>
+
+                    <div class="field span-2">
+                        <label for="area">Περιοχή</label>
+                        <input id="area" name="area" type="text" autocomplete="address-level3" placeholder="">
+                    </div>
                 </div>
+
+
+                <div class="fields-grid phone-only" hidden>
+                    <div class="field span-2">
+                        <label for="fixed-phone">Σταθερό</label>
+                        <input id="fixed-phone" name="fixed_phone" type="tel" inputmode="tel" placeholder="π.χ. 2101234567" pattern="[0-9]{10}">
+                    </div>
+                </div>
+
+                <button class="cta" type="button" onclick="closePopup()">Έλεγχος</button>
+
+                </form>
+            </section>   
+
+            </div>
             </div>
 
             <script>
@@ -152,6 +260,7 @@
                 document.getElementById("popup").style.display = "none";
                 }
             </script>
+
         </section>          
 
         <section class="popular plans" aria-labelledby="plans-title">

@@ -23,8 +23,6 @@
   --cta-ink: #0c1b10;
   --price: #cdcdcd;
 
-
-
 }
 
 
@@ -468,6 +466,9 @@ body{
 @keyframes fadeInUp{
   to{ opacity:1; transform: translateY(0) }
 }
+
+
+
 
 .fields-grid{
   display: grid;
