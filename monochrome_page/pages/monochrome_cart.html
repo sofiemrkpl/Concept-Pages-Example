@@ -65,10 +65,15 @@
             <div class="checkout-items">
 
                 <div class="empty-state">
-                    <h3 class="empty-title">Το καλάθι είναι άδειο</h3>
+                    <h3 class="empty-title">Το καλάθι σου είναι άδειο</h3>
+
+                    <div class="items" id="cart-items">
+                    <!--- js to be added--->
+                    </div>
 
 
                 </div> 
+
                 
             </div>
             
@@ -82,17 +87,17 @@
 
                         <article class="price-sum-box">
                             <h4 class="sum-box-title">Τελη</h4>
-                            <p class="sum-box-price">-</p>
+                            <p class="sum-box-price" id="sum-fees">-</p>
                         </article>
 
                         <article class="price-sum-box">
                             <h4 class="sum-box-title">Εφαπαξ Χρέωση</h4>
-                            <p class="sum-box-price">-</p>
+                            <p class="sum-box-price"  id="sum-once">-</p>
                         </article>                        
 
                         <article class="price-sum-box">
                             <h4 class="sum-box-title">Μηνιαίο Πάγιο</h4>
-                            <p class="sum-box-price">-</p>
+                            <p class="sum-box-price" id="sum-monthly">-</p>
                         </article>
                     </div>
 
@@ -117,6 +122,8 @@
                     </a>
                 </div>
 
+                <input type="hidden" id="amount-input" name="amount" value="0.00">
+
             </div>
 
         </section>
@@ -136,7 +143,7 @@
                             <li>200 λεπτά προς κινητά</li>
                             <li>Δωρεάν router τελευταίας τεχνολογίας</li>
                         </ul>
-                            <a href="#" class="card_button">Δες περισσότερα</a>
+                            <a href="../pages/monochrome_landline_packages.html" class="card_button">Δες περισσότερα</a>
                         </div>
                     </article>
 
@@ -144,14 +151,14 @@
                         <img class="card-image" src="../assets/images/phone.jpg" alt="products">
                         <div class="card-info"> 
                             <h3 class="card-title">Mobile</h3>
-                            <p class="card-price">14,90€<span>/mo</span></p>
+                            <p class="card-price">14,90€<span>/μήνα</span></p>
                             <ul class="card-list">
                             <li>300 λεπτά προς όλα τα δίκτυα</li>
                             <li>1000 SMS προς όλα τα δίκτυα</li>
                             <li>4 GB Internet</li>
 
                             </ul>
-                            <a href="#" class="card_button">Δες περισσότερα</a>
+                            <a href="../pages/monochrome_mobile_packages.html" class="card_button">Δες περισσότερα</a>
                         </div>
                     </article>
 
@@ -166,7 +173,7 @@
                             <li>Παιδικά προγράμματα</li>
                             <li>Ειδησεογραφικά κανάλια</li>
                         </ul>
-                            <a href="#" class="card_button">Δες περισσότερα</a>
+                            <a href="../pages/monochrome_tv.html" class="card_button">Δες περισσότερα</a>
                         </div>
                     </article>
 
@@ -180,7 +187,7 @@
                             <li>1000 SMS</li>
                             <li>5 GB Internet</li>
                         </ul>
-                            <a href="#" class="card_button">Δες περισσότερα</a>
+                            <a href="../pages/monochrome_internet_packages.html" class="card_button">Δες περισσότερα</a>
                         </div>
                     </article>
                 </div>
@@ -260,6 +267,8 @@
 
     <!-- JavaScript: go up one level to js scripts/ -->
     <script src="../scripts/monochrome_script.js"></script>
+    <script src="../scripts/monochrome_checkout_script.js" defer></script>
+
 
 </body>
 </html>
