@@ -1,37 +1,51 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const cartContainer = document.getElementById('cart-items');
   const emptyTitle = document.querySelector('.empty-state .empty-title');
-  const saved = localStorage.getItem('selectedPlan');
 
-  if (saved) {
-    const plan = JSON.parse(saved);
 
-    if (emptyTitle) emptyTitle.style.display = 'none';
+  const iconMap = {
+    landline: '../assets/icons/phone-office.png',
+    mobile: '../assets/icons/mobile_button.png',
+    internet: '../assets/icons/router-wifi.png',
+    tv: '../assets/icons/tv.png'
+  };
+
+
+
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem('cartItems')) || []; } catch { cart = []; }
+
+  if (cart.length === 0) {
+    if (emptyTitle) emptyTitle.style.display = '';
+
+
+
+    const sumMonthly = document.getElementById('sum-monthly');
+    if (sumMonthly) sumMonthly.textContent = '-';
+    return;
+  }
+  if (emptyTitle) emptyTitle.style.display = 'none';
+
+
+  cartContainer.innerHTML = '';
+  cart.forEach((plan) => {
+    const iconSrc = iconMap[plan.type] || '../assets/icons/box.png';
 
     const itemDiv = document.createElement('div');
-    itemDiv.classList.add('cart-item');
+    itemDiv.className = 'cart-item';
     itemDiv.innerHTML = `
       <div class="cart-item-inner">
-        <!-- left icon + label -->
         <div class="item-media">
           <div class="dev-icon">
-            <img src="../assets/icons/tv.png" alt="icon">
+            <img src="${iconSrc}" alt="icon">
           </div>
-          <span>${plan.type ? plan.type.toUpperCase() : 'PAKETO'}</span>
         </div>
 
-        <!-- center text -->
         <div class="item-body">
-          <h3>${plan.name || 'Πρόγραμμα'}</h3>
-          <p class="subtitle">
-            <span class="chip">
-              <img src="../assets/icons/film.png" alt="" style="width:12px;height:12px;opacity:.85">
-            </span>
-            Πλούσιο κινηματογραφικό περιεχόμενο
-          </p>
+          <h3>${plan.name}</h3>
         </div>
 
-        <!-- right pills -->
         <div class="item-pills">
           <div class="pill">
             <span class="label">Τέλη</span>
@@ -43,27 +57,38 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="pill is-accent">
             <span class="label">Μηνιαίο Πάγιο</span>
-            <span class="value">${plan.price || '-'}</span>
+            <span class="value">${plan.priceText || '-'}</span>
           </div>
         </div>
 
-        <!-- close -->
         <div class="item-close">
-          <button id="remove-item" aria-label="Remove item">
+          <button class="remove-item" data-id="${plan.id}" aria-label="Remove item">
             <img src="../assets/icons/cross.png" alt="X" style="width:16px;height:16px;opacity:.9">
           </button>
         </div>
       </div>
     `;
     cartContainer.appendChild(itemDiv);
-  }
+  });
 
-  // emty cart
+
+  const totalMonthly = cart.reduce((sum, p) => sum + (p.priceValue || 0), 0);
+  const sumMonthlyEl = document.getElementById('sum-monthly');
+  if (sumMonthlyEl) {
+
+    sumMonthlyEl.textContent = totalMonthly.toFixed(2).replace('.', ',') + '€';
+  }
+  const amountInput = document.getElementById('amount-input');
+  if (amountInput) amountInput.value = totalMonthly.toFixed(2);
+
+  // remove item
   cartContainer.addEventListener('click', (e) => {
-    const btn = e.target.id === 'remove-item' ? e.target : e.target.closest('#remove-item');
-    if (btn) {
-      localStorage.removeItem('selectedPlan');
-      location.reload();
-    }
+    const btn = e.target.closest('.remove-item');
+    if (!btn) return;
+
+    const id = btn.getAttribute('data-id');
+    const newCart = cart.filter(item => item.id !== id);
+    localStorage.setItem('cartItems', JSON.stringify(newCart));
+    location.reload();
   });
 });

@@ -16,23 +16,28 @@ body {
 
 .checkout-grid {
   width: 100%;
-  margin: 20px;
-  padding: 30px;
+  margin: 0 auto 80px;
+  padding: 30px 20px;
   
-  display: grid;
-  grid-template-columns: 1fr 360px;
+  display: flex;
 
-  gap: 20px;
-  align-items: start;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
 }
 
 .checkout-header {
-  grid-column: 1 / -1;
-  margin-left: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 16px 0;
   font-size: 2rem;
 
   font-weight: 800;
   color: var(--ink);
+
+  border-bottom: 2px solid var(--border);
 }
 
 
@@ -43,6 +48,8 @@ body {
   box-shadow: var(--shadow);
 
   min-height: 420px;
+  max-width: 50vw;
+
   display: grid;
   place-items: center;
   position: relative;
@@ -63,7 +70,7 @@ body {
 }
 
 .cart-sum {
-  position: sticky;
+  position: relative;
   top: 24px;
 
   background: var(--card-2);
