@@ -74,15 +74,18 @@
   width: min(980px, 96vw);
   margin: 24px auto 0;
   padding: clamp(24px, 3vw, 44px);
+
   background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
   border: 1px solid var(--card_br);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   color: var(--color);
+
   opacity: 0;
   transform: translateY(16px);
   animation: fadeInUp .6s ease forwards;
 }
+
 @keyframes fadeInUp{
   to{ opacity:1; transform: translateY(0) }
 }
@@ -119,7 +122,7 @@
   padding: 12px 14px;
   border-radius: calc(var(--radius) + 8px);
   border: 1px solid var(--card_br);
-  background: #121212; /* keeps dark surface inside the card */
+  background: #121212;
   color: var(--ink);
   outline: none;
   transition: border-color .15s ease, box-shadow .15s ease, transform .06s ease;
@@ -193,9 +196,56 @@
   filter: brightness(.95);
 }
 
-@media (max-width: 520px){
-  .availability-card .cta{
+#successful .availability-card {
+  padding: 16px;
+}
+
+
+
+
+@media (max-width: 900px) {
+  .availability-checker { padding: 0; }
+  
+  .availability-title {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  .availability-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .fields-grid,
+  .fields-grid.phone-only {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .field,
+  .field.span-2 {
+    grid-column: auto / auto !important;
+  }
+
+  .select-wrap select,
+  .field input {
     width: 100%;
+    min-height: 42px;
+    font-size: 16px;
+  }
+
+  .cta {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
   }
 }
 
+@media (max-width: 900px){
+
+   .cta{
+    max-width: 60vw;
+    align-self: center;}
+}

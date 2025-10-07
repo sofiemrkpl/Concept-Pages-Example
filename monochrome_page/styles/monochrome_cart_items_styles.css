@@ -116,17 +116,24 @@
 }
 
 /* responsiveness */
-@media (max-width: 860px){
-  .cart-item-inner{
-    grid-template-columns: 56px 1fr 24px;
-    grid-template-areas:
-      "media title close"
-      "media pills close";
-    row-gap: 12px;
+@media (max-width: 900px){
+  .cart-item{
+    margin: 1.5rem;
   }
-  .item-media{ grid-area: media; }
-  .item-body{ grid-area: title; }
-  .item-pills{ grid-area: pills; justify-content: start; }
-  .item-close{ grid-area: close; }
-  .pill{ min-width: 96px; }
+  .cart-item-inner{ display: block; }
+
+  .item-pills{
+    margin: 1rem;
+  }
+  /* .item-pills { 
+
+    display: flex !important;
+  }
+  .pill {
+    min-width: 0;
+    text-align: left;
+    padding: 8px 10px;
+  }
+
+  .pill .value { font-size: 15px; } */
 }
