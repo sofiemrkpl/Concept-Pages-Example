@@ -13,13 +13,16 @@
     --bg-ribbon-odd: #d9d9d9;
     --bg-ribbon-even: #f2f2f2;
 
-    --text-main: #000;
+    --text-main: #1d1d1d;
+    --ink: #0c1b10;
     --text-light: #f7f7f7;
 
     --text-muted: #737373;
     --text-footer: #cccccc;
 
-    --bg-btn: #2563eb;
+    --bg-btn: #2563eb ;
+    --bg-btn-muted: #396bd5;
+
     --accent-secondary: hsl(0, 0%, 25%, 0.8);
     --border-light: #e5e7eb;
     --shadow-color: rgba(0, 0, 0, 0.08);
@@ -100,9 +103,13 @@ body a{
 
 .primary.navigation.actions .search,
 .primary.navigation.actions .cart{
-    display: inline;
     padding-left: 1rem;
+    
+    aspect-ratio: 1/1;
+    width: 32px;
 }
+
+
 
 
 .main.header a{
@@ -403,7 +410,7 @@ body a{
 .ribbon-module .ribbon.title{
     font-size: 2rem;
     font-weight: 700;
-    color: var(--heading-color);
+    color: var(--text-main);
     margin: 0;
 
     /* border-bottom: 1px solid var(--bg-btn); */
@@ -411,7 +418,7 @@ body a{
 
 .ribbon-info{
     font-size: 1.5rem;
-    color: var(--ribbon-muted);
+    color: var(--ink);
 }
 
 .ribbon-btn{
@@ -420,7 +427,7 @@ body a{
     justify-content: center;
     
     height: 2rem;
-    background-color: #637aab;
+    background-color: var(--bg-btn);
     color: var(--colour);
 
     border: none;
@@ -440,7 +447,7 @@ body a{
 
 
 .ribbon-btn:hover {
-    background-color: #396bd5;
+    background-color: var(--bg-btn);
     color: var(--colour);
 
     transform: translateY(-2px);
@@ -454,9 +461,6 @@ body a{
     transition: transform .2s ease, filter .2s ease;
 }
 
-.ribbon-module + .ribbon-module{
-  box-shadow: inset 0 1px 0 rgba(0,0,0,.06);
-}
 
 
 
