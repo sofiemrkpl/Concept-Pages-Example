@@ -1,4 +1,36 @@
 
+:root {
+    --bg: #f2f2f2;
+
+    --colour: #ffffff;
+    --heading-color: #444;
+    --text-color: #333;
+
+
+    --bg-header: hsl(0, 0%, 93%);
+    --bg-secondary-header: hsl(0, 0%, 90%);
+
+    --bg-ribbon-odd: #d9d9d9;
+    --bg-ribbon-even: #f2f2f2;
+
+    --text-main: #000;
+    --text-light: #f7f7f7;
+
+    --text-muted: #737373;
+    --text-footer: #cccccc;
+
+    --bg-btn: #2563eb;
+    --accent-secondary: hsl(0, 0%, 25%, 0.8);
+    --border-light: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+
+    --radius-small: 5px;
+    --radius-medium: 10px;
+    --radius-large: 15px;
+  
+}
+
+
 body{
     background-color: #f2f2f2;
     font-family: Arial, Helvetica, sans-serif;
@@ -329,6 +361,104 @@ body a{
 
     margin-top: auto;
 }
+
+:root{
+      --ribbon-muted:  color-mix(in srgb, var(--text-color) 70%, transparent);
+
+}
+
+/* Ribbon */
+.ribbon{
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.ribbon-module{
+    width: 100%;
+    max-height: 60vh;
+    color: var(--text-color);
+
+    align-items: center;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 6rem;
+
+    padding: 2rem;
+    /* margin: 0; */
+}
+
+
+
+.ribbon-module#odd{
+    background-color: var(--bg-ribbon-odd);
+
+}
+.ribbon-module#even{
+    background-color: var(--bg-ribbon-even);
+}
+
+.ribbon-module .ribbon.title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
+
+    /* border-bottom: 1px solid var(--bg-btn); */
+}
+
+.ribbon-info{
+    font-size: 1.5rem;
+    color: var(--ribbon-muted);
+}
+
+.ribbon-btn{
+      display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 2rem;
+    background-color: #637aab;
+    color: var(--colour);
+
+    border: none;
+    border-radius: var(--radius-small);
+    min-height: 3rem;
+    cursor: pointer;
+
+    padding: 1.5rem;
+    gap: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transition: 0.3s ease;
+    
+}
+
+
+.ribbon-btn:hover {
+    background-color: #396bd5;
+    color: var(--colour);
+
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.12);
+}
+
+
+.ribbon-btn img{
+    height: 18px;
+    filter: brightness(2) invert(1);
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.ribbon-module + .ribbon-module{
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.06);
+}
+
+
 
 /* Footer */
 .footer {
