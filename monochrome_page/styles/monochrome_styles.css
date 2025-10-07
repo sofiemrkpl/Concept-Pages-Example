@@ -642,28 +642,6 @@ footer { background-color: #0d0d0d; }
 }
 
 
-.menu-button{
-  display:none;
-  width:44px;
-  height:44px;
-
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-}
-
-.menu-button span{
-  display:block;
-  width:22px;
-  height:2px;
-
-  background:#fff;
-
-  margin:3px 0;
-  transition:.3s;
-}
-
-
 
 @media (max-width: 900px){
   main{ padding-top: var(--header-h);
@@ -675,7 +653,7 @@ footer { background-color: #0d0d0d; }
   }
   
 /* AAAAAAAAAAAAAAAAAAAAAAAAAA */
-/* MAKE THIS WORK!!!! */
+/* MAKE IT WORK!!!! */
 
   .menu-button{ 
     display:flex;

@@ -33,11 +33,10 @@
       track.scrollBy({ left: delta, behavior: 'smooth' });
     }
 
-    //arrows
+    
     prevBtn.addEventListener('click', () => smoothScroll(-step));
     nextBtn.addEventListener('click', () => smoothScroll(step));
 
-    // keyboard
     track.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') { e.preventDefault(); smoothScroll(step); }
       if (e.key === 'ArrowLeft')  { e.preventDefault(); smoothScroll(-step); }
@@ -55,14 +54,13 @@
 
 
 
-    //change width for responsive layouts
     const onResize = () => { step = measureStep(); clampEnds(); };
     window.addEventListener('resize', onResize);
 
-    // Initialization
     requestAnimationFrame(() => {
       step = measureStep();
       clampEnds();
     });
   }
 })();
+

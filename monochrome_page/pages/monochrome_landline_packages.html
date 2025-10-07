@@ -20,7 +20,7 @@
             </div>
 
 
-            <ul class="navigation-list">
+            <ul class="navigation-list" id="desctop-nav">
                 <li class="dropdown">
                     <a href="../pages/monochrome_landline_packages.html">ΣΤΑΘΕΡΟ</a>
 
@@ -339,6 +339,25 @@
         </section>
     </main>
     
+    <script>
+        (function () {
+            const btn = document.getElementById('menu-button');
+            const navList = document.getElementById('desctop-nav');
+            btn?.addEventListener('click', () => {
+            const open = document.body.classList.toggle('nav-open');
+            btn.setAttribute('aria-expanded', String(open));
+            });
+
+            // Close menu when a link is clicked (nice for one-page feel)
+            navList?.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target && target.closest('a')) {
+                document.body.classList.remove('nav-open');
+                btn?.setAttribute('aria-expanded', 'false');
+            }
+            });
+        })();
+    </script>
 
     <footer class="site-footer">
         <div class="footer-container">
