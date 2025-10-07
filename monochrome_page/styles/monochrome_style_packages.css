@@ -743,6 +743,10 @@ body{
   margin: 2rem;
 }
 
+.popuplabel{
+  color: var(--ink);
+}
+
 .popup button:hover {
   background: #9a34ba;
 }

@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cellectro Monochrome</title>
     <link rel="stylesheet" href="../styles/monochrome_styles.css">
-    <link rel="stylesheet" href="../styles/monochrome_style_packages.css">    
+    <link rel="stylesheet" href="../styles/monochrome_style_packages.css"> 
+    <!-- <link rel="stylesheet" href="../styles/monochrome_popup_styles.css">  -->
+       
     <link rel="icon" href="../assets/icons/logo.png" type="image/x-icon">
 
 </head>
@@ -266,7 +268,29 @@
         </div>
         </section>
 
-        <!-- <aside class="compare-bar" aria-live="polite" hidden>
+        <section>
+            <div class="popup-overlay" id="popup">
+                <div class="popup">
+                    <p class="popup-info">Το πακέτο προστέθηκε στο καλάθι</p>
+                    <a class="popuplabel" href="#" onclick="closePopup()">
+                        Συνέχισε τις αγορές σου
+                    </a>    
+                    <a href="../pages/monochrome_cart.html">
+                        <button onclick="closePopup()">Δες το καλάθι σου</button>
+                    </a> 
+                </div>
+            </div>
+
+            <script>
+                function openPopup() {
+                document.getElementById("popup").style.display = "flex";
+                }
+
+                function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                }
+            </script>
+        </section>        <!-- <aside class="compare-bar" aria-live="polite" hidden>
             <div class="compare-list" aria-label="Επιλεγμένα πακέτα για σύγκριση"></div>
             <a class="secondary button" href="#">Σύγκριση</a>
         </aside> -->

@@ -92,3 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
     location.reload();
   });
 });
+
+function emptyCart() {
+  localStorage.removeItem('cartItems');
+
+  const cartContainer = document.getElementById('cart-items');
+  if (cartContainer) cartContainer.innerHTML = '';
+
+  const emptyTitle = document.querySelector('.empty-state .empty-title');
+  if (emptyTitle) emptyTitle.style.display = '';
+
+  const idsToReset = ['sum-fees', 'sum-once', 'sum-monthly'];
+  idsToReset.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '-';
+  });
+
+  const amountInput = document.getElementById('amount-input');
+  if (amountInput) amountInput.value = '0.00';
+}
