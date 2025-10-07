@@ -22,6 +22,12 @@
   box-sizing: border-box;
 }
 
+html,body{
+  max-width:100%;
+  overflow-x:hidden
+}
+
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--bg);
@@ -29,8 +35,19 @@ body {
   margin: 0;
 }
 
+html[lang="el"] body,
+ body{
+  word-break:normal; 
+  overflow-wrap:anywhere; 
+}
+
 main {
   padding-top: 70px; /* height of the header */
+}
+
+
+input,select,textarea{
+  font-size:16px
 }
 
 .header .primary.navigation {
@@ -55,11 +72,16 @@ main {
 .navigation-list {
   list-style: none;
   display: flex;
+
   flex-direction: row;
   justify-content: space-between;
+
   gap: 3rem;
   padding: 0;
   margin: 0;
+
+    align-items:center
+
 }
 
 .cart-section {
@@ -301,10 +323,12 @@ main {
 }
 
 /* Module */
+
 .module {
   display: flex;
   width: 100%;
-  height: 80vh;
+    height: 80vh;
+  min-height: 420px;
   align-items: stretch;
   overflow: hidden;
   margin-bottom: 0;
@@ -325,6 +349,7 @@ main {
   height: 100%;
 }
 
+
 .module-image .image {
   width: 100%;
   height: 100%;
@@ -336,6 +361,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
   background-color: transparent;
   color: var(--muted);
@@ -408,6 +434,7 @@ footer { background-color: #0d0d0d; }
   color: #999999;
 }
 
+
 /* Cards */
 .popular.plans {
   margin: 0;
@@ -423,23 +450,28 @@ footer { background-color: #0d0d0d; }
 
 .grid_cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
   align-items: stretch;
   /* margin: auto; */
-  margin-left: 20px;
+  margin: 0 16px 16px;
 }
 
 .grid_cards .card {
   position: relative;
-  width: 22vw;
+  /* width: 22vw; */
+  width: auto;
+  aspect-ratio: 3 / 4; 
+
   min-height: 60vh;
+
   box-shadow: 0 6px 24px rgba(0,0,0);
   justify-content: space-between;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
+
   margin: auto;
   transition: transform 0.3s ease;
 }
@@ -450,6 +482,7 @@ footer { background-color: #0d0d0d; }
 }
 
 .polular-title {
+  font-size: var(--fs-md);
   color: #e0e0e0;
   margin: 1.5rem;
 }
@@ -473,14 +506,17 @@ footer { background-color: #0d0d0d; }
   z-index: 1;
   color: var(--primary_btn);
   background: linear-gradient(to bottom, #0d0d0d, transparent 70%);
+  margin-top: auto;
 }
 
-.card-title { font-size: 1.1rem; margin: 0; }
+
 
 .card-price {
   font-weight: 700;
   font-size: 1.6rem;
   margin: 0.5rem;
+
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem)
 }
 
 .card-price span {
@@ -587,3 +623,145 @@ footer { background-color: #0d0d0d; }
   background: var(--primary_btn);
   color: var(--btn_text);
 }
+
+
+/* Responsiveness  */
+:root{
+  --space-1: clamp(8px, 1.6vw, 14px);
+  --space-2: clamp(12px, 2.2vw, 20px);
+  --fs-sm: clamp(14px, 1.8vw, 16px);
+  --fs-md: clamp(16px, 2vw, 18px);
+  --fs-lg: clamp(22px, 3.8vw, 32px);
+  --fs-xl: clamp(28px, 6vw, 44px);
+}
+
+
+.menu-button{
+  display:none;
+  width:44px;
+  height:44px;
+
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.menu-button span{
+  display:block;
+  width:22px;
+  height:2px;
+
+  background:#fff;
+
+  margin:3px 0;
+  transition:.3s;
+}
+
+
+
+@media (max-width: 900px){
+  .header .primary.navigation{
+    padding: 0.5rem 1rem;
+    gap: .5rem;
+  }
+  
+
+  .menu-button{display:flex}
+  .navigation-list{
+    position: fixed;
+    inset: 70px 0 auto 0;
+    background:#0d0d0d;
+    display: grid;
+    grid-auto-rows:min-content;
+    gap: .25rem;
+    padding: .75rem 1rem 1rem;
+    border-top: 1px solid #222;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+
+
+  #nav-toggle:checked ~ .navigation-list{max-height: 85dvh}
+  #nav-toggle:checked + .menu-button span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+  #nav-toggle:checked + .menu-button span:nth-child(2){opacity:0}
+  #nav-toggle:checked + .menu-button span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+  .cart-section{position:fixed;right:1rem;top:.5rem}
+  #nav-toggle:checked ~ .cart-section{top:auto;bottom:1rem}
+
+  .dropdown-menu{position:static; box-shadow:none; border:none; padding:.25rem 0}
+  .dropdown:focus-within .dropdown-menu{display:block}
+  .dropdown:hover .dropdown-menu{display:none}
+  .primary.navigation .dropdown a{padding:.6rem 0; display:block}
+}
+
+
+/* slideshow */
+.slideshow-section{height: clamp(60vh, 80vh, 90vh)}
+@media (max-width: 768px){
+  .slideshow-section{height: 70vh}
+  .slideshow-label{
+    align-items: center; text-align:center; padding: 0 1rem;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+  }
+  .slideshow-label h1{font-size: var(--fs-xl)}
+  .slideshow-label p{font-size: var(--fs-md)}
+  .prev,.next{padding:12px}
+}
+
+
+/* Modules */
+
+@media (max-width: 992px){
+  .module{
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;}
+  .module-even{ flex-direction: row-reverse;  }
+  .module-even .module-image {  order: -1;}
+}
+
+@media (max-width: 768px){
+  .module{
+    flex-direction: column;
+    min-height: unset;
+  }
+  .module-image,.module-info{width:100%;height:auto}
+  .module-info{gap: var(--space-2); padding: 1.25rem}
+  .module-info h3{font-size: var(--fs-lg)}
+  .module-info p{font-size: var(--fs-md); max-width: 45ch}
+  /* disable hover zoom on touch */
+  @media (pointer:coarse){
+    .module:hover{transform:none; filter:none}
+    .grid_cards .card:hover{transform:none; filter:none}
+  }
+}
+
+
+/* Popular cards */
+/* --- */
+
+/* Newsletter */
+.newsletter-container{max-width: min(100% - 2rem, 900px)}
+@media (min-width: 900px){
+  .newsletter-container{max-width: 60ch}
+}
+
+/* Footer */
+.footer-container{
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+@media (max-width: 992px){
+  .footer-container{grid-template-columns: repeat(2, minmax(0,1fr))}
+}
+@media (max-width: 600px){
+  .footer-container{grid-template-columns: 1fr}
+}
+
+/* ===== Small polish ===== */
+.logo{max-width:44px}
+.icon{max-width:22px}
+.slideshow-label .primary.button{padding:.85rem 1.1rem; font-size: clamp(1rem, 2.6vw, 1.3rem)}
+.popular.plans{padding: 10px 0 20px}
