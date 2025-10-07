@@ -719,12 +719,13 @@ body{
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   align-items: center;
   
   height: 25vh;
-  width: 30vw;
+  max-width: 90%;
+  
 
 
   background: #222;
@@ -758,9 +759,7 @@ body{
   background: #b341d3;
   color: white;
   cursor: pointer;
-
-
-    transition:  0.3s;
+  transition:  0.3s;
 
 }
 
