@@ -31,13 +31,15 @@
     --radius-medium: 10px;
     --radius-large: 15px;
   
+    --container-pad: 16px;
+
 }
 
 
 body{
     background-color: #f2f2f2;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
+    margin: 0;
 }
 
 body a{
@@ -46,23 +48,31 @@ body a{
 
 
 .main.header .heading{
-    max-width: 100vw;
-    display: flex;
-    justify-content: space-between; 
+    display: grid;
+    grid-template-columns: auto 1fr auto;
 
     align-items: center;
-    position: relative;
-    height: 40px;
 
+    gap:16px;
+    position: relative;
     /* background-color: #f2f2f2; */
     background-color: hsl(0, 0%, 93%);
-    padding: 5px 60px 5px 40px;
+    padding: 8px 40px;
 
     top: 0;
     left: 0;
+    width: 100%;
+    height: 40px;
 
+    box-sizing: border-box;
+    position: relative;
     z-index: 100;
 
+}
+
+.logo-container {
+    grid-column: 1; 
+    justify-self: start;
 }
 
 .main.header .logo{
@@ -77,36 +87,35 @@ body a{
     list-style: none;
     margin: 0;
     padding: 0;
+
     display: flex;
+
     align-items: center;
-    gap: 10px;
-    flex-wrap: nowrap;
+    gap: clamp(8px, 2vw, 20px);
+
     
     justify-self: center;
-
+    justify-content: center;
+    text-align: center;
+    min-width: 0;
 }
-.authentication{
+
+.cart{
     grid-column: 3;
     justify-self: end;
     display: flex;
     align-items: center;
-    margin: 0;
-
+    gap: 6px;
 }
-
-
-.primary.navigation.actions .dropdown{
-    display: inline;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.cart a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: black;
 }
-
-.primary.navigation.actions .search,
-.primary.navigation.actions .cart{
-    padding-left: 1rem;
-    
-    aspect-ratio: 1/1;
-    width: 32px;
+.cart img {
+    height: 20px;
 }
 
 
@@ -163,9 +172,6 @@ body a{
     font-size: 14px;
 }
 
-.wrapper .index.region section{
-    margin-bottom: 60px;
-}
 
 
 /* Hero */
@@ -273,6 +279,7 @@ body a{
 /* hero end */
 
 
+
 /* Popular Plans */
 
 .popular.plans{
@@ -283,7 +290,6 @@ body a{
 .grid_cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
 
     gap: 20px;
     align-items: stretch;
@@ -309,6 +315,8 @@ body a{
 
     /* align-items: stretch; */
     margin: auto;
+    padding: 12px 24px;
+
 
 }
 
@@ -354,14 +362,17 @@ body a{
 
 
 .card_button{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.7rem 1rem;
+
+    padding: 12px 24px;
     border-radius: 10px;
     border: 1px solid transparent;
+
     font-weight: 600;
     text-decoration: none;
+
     box-shadow: 0 2px 10px hsl(0,0,0,.06);
     background: #2563eb;
     color: #ffffff;
@@ -370,7 +381,7 @@ body a{
 }
 
 :root{
-      --ribbon-muted:  color-mix(in srgb, var(--text-color) 70%, transparent);
+    --ribbon-muted:  color-mix(in srgb, var(--text-color) 70%, transparent);
 
 }
 
@@ -399,13 +410,13 @@ body a{
 
 
 
-.ribbon-module#odd{
-    background-color: var(--bg-ribbon-odd);
+.ribbon-module.ribbon-odd { 
+    background-color: var(--bg-ribbon-odd); 
+}
+.ribbon-module.ribbon-even { 
+    background-color: var(--bg-ribbon-even); 
+}
 
-}
-.ribbon-module#even{
-    background-color: var(--bg-ribbon-even);
-}
 
 .ribbon-module .ribbon.title{
     font-size: 2rem;
@@ -426,13 +437,11 @@ body a{
     align-items: center;
     justify-content: center;
     
-    height: 2rem;
     background-color: var(--bg-btn);
     color: var(--colour);
 
-    border: none;
     border-radius: var(--radius-small);
-    min-height: 3rem;
+
     cursor: pointer;
 
     padding: 1.5rem;
@@ -476,7 +485,7 @@ body a{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 30px;
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -531,4 +540,122 @@ body a{
 
 
 
+/* responsive */
+/* hero */
+@media (prefers-reduced-motion: reduce) {
+    .hero.video { display: none; }
+    .container.inner.hero {
+        background: url("../assets_white/images/hero-poster.jpg") center/cover no-repeat;
+    }
+}
+@media (max-width: 900px) {
+    .main.header .heading {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        padding: 8px 20px;
+    }
+    .primary.navigation.actions {
+        display: none;
+    }
+    .cart {
+        justify-self: right;
+    }
+    .secondary.header {
+      height: auto;
+      padding: 10px 12px;
+    }
+    .hero.title {
+      margin-top: 80px;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+    }
+    .hero.section p {
+      margin-bottom: 24px;
+    }
+    #hero_btn1 {
+      margin: 0;
+    }
+}
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden; 
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; 
+    border: 0; 
+    padding: 0; 
+    margin: -1px;
+}
 
+@media (max-width: 900px) {
+
+    .main.header .heading {
+        grid-template-columns:  auto 1fr auto;
+        padding: 8px 20px;
+
+    }
+    .cart { justify-self: end; }
+    #primary-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: grid;
+        grid-auto-rows: minmax(44px, auto);
+        gap: 0;
+
+        background: var(--bg-secondary-header);
+        border-top: 1px solid var(--border-light);
+        box-shadow: 0 8px 24px var(--shadow-color);
+
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity .2s ease, transform .2s ease, visibility .2s;
+        z-index: 99;
+    }
+
+    .cart-link { 
+        padding: 6px 8px; 
+        display: inline-flex; 
+        align-items: center; 
+        gap: 8px; }
+
+    .secondary.header {
+        height: auto;
+        padding-top: 8px; 
+        padding-bottom: 8px;
+    }
+    .secondary.header .image.navigation.actions {
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    .secondary.header .image.navigation.actions > li {
+        scroll-snap-align: center;
+        min-width: 80px;
+    }
+    .secondary.header .icon { height: 28px; }
+
+    .footer {
+        padding: 24px var(--container-pad);
+        font-size: 15px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .footer-section {
+        padding-block: 8px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-section:last-child { border-bottom: 0; }
+    .footer-section h4 { margin: 0 0 6px; font-size: 16px; }
+    .footer-section ul li a { padding: 8px 0; display: inline-block; }
+
+    .footer-bottom { margin-top: 12px; padding-top: 12px; }
+}
