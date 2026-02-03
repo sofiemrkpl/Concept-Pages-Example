@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cellectro White</title>
         <link rel="stylesheet" href="../style_white/white_style.css">
+        <link rel="stylesheet" href="../style_white/white_cart_style.css" >
+    
     </head>
     <body>
         <header class="main header" id="header">
@@ -16,15 +16,14 @@
                             <img class="logo" role="button" src="../assets_white/logo/logo_black_25p.png" alt="Cellectro Home">
                         </a>
                     </div>
-                <ul class="primary navigation actions">
-                    <li class="dropdown" ><a href="#">Τηλεφωνία</a></li>
-                    <li class="dropdown" ><a href="#">Υπηρεσίες</a></li>
-                    <li class="dropdown" ><a href="#">Υποστήριξη</a></li>
-                    <li class="dropdown" ><a href="#">Καταστήματα</a></li>
-                    <li class="dropdown" ><a href="#">Επιχειρήσεις</a></li>
-                    <li class="dropdown" ><a href="#">Υποστήριξη</a></li>
+                    <ul class="primary navigation actions" id="primary-nav">
+                        <li class="dropdown" ><a href="#">Τηλεφωνία</a></li>
+                        <li class="dropdown" ><a href="#">Υπηρεσίες</a></li>
+                        <li class="dropdown" ><a href="#">Καταστήματα</a></li>
+                        <li class="dropdown" ><a href="#">Επιχειρήσεις</a></li>                
+                        <li class="dropdown" ><a href="#">Υποστήριξη</a></li>
 
-                </ul>
+                    </ul>
                     <div class="cart" >
                         <a href="../pages_white/white_cart.html">
                             <img class="cart icon" role="button" src="../assets_white/icons/shopping-cart.png" alt="cart">
@@ -45,7 +44,7 @@
                         <span>Κινητό</span>
                     </li>
                     <li class="internet">
-                        <a href="../pages_white/white_internet_packages.html"><img class="icon" src="../assets_white/header_2_icons/wifi.png" alt="internet"></a>
+                        <a href="../pages_white/white_internet_form.html"><img class="icon" src="../assets_white/header_2_icons/wifi.png" alt="internet"></a>
                         <span>Internet</span>
                     </li>
                     <li class="landline">
@@ -63,6 +62,293 @@
                 </ul>
             </nav>
         </header>
+        <main class="main">   
+            <section class="checkout-grid">
+                <h2 class="checkout-header">Καλάθι</h2>
+
+                <div class="checkout-items">
+
+                    <div class="empty-state">
+                        <h3 class="empty-title">Το καλάθι σου είναι άδειο</h3>
+
+                        <div class="items" id="cart-items">
+                        <!--- js to be added--->
+                        </div>
+
+
+                    </div> 
+
+                    
+                </div>
+                
+                <div class="cart-sum">
+
+                    <div class="total-price">
+                        <h3 class="total-price-title">Σύνοψη καλαθιού</h3>
+
+
+                        <div class="price-sum">
+
+                            <article class="price-sum-box">
+                                <h4 class="sum-box-title">Τελη</h4>
+                                <p class="sum-box-price" id="sum-fees">-</p>
+                            </article>
+
+                            <article class="price-sum-box">
+                                <h4 class="sum-box-title">Εφαπαξ Χρέωση</h4>
+                                <p class="sum-box-price"  id="sum-once">-</p>
+                            </article>                        
+
+                            <article class="price-sum-box">
+                                <h4 class="sum-box-title">Μηνιαίο Πάγιο</h4>
+                                <p class="sum-box-price" id="sum-monthly">-</p>
+                            </article>
+                        </div>
+
+                        <button class="btn-cta" type="button" onclick="openPopup(); ">Checkout</button>
+
+                        <ul class="perks">
+                            <li><span><img class="check-icon" src="../assets_white/icons/check.png" alt="check"></span>
+                                Δωρεάν παράδοση παραγγελίας</li>
+                            <li><span><img class="check-icon" src="../assets_white/icons/check.png" alt="check"></span>
+                                Παρακολούθηση παραγγελίας</li>
+                            <li><span><img class="check-icon" src="../assets_white/icons/check.png" alt="check"></span>
+                                Δωρεάν επιστροφές</li>
+                            <li><span><img class="check-icon" src="../assets_white/icons/check.png" alt="check"></span>
+                                Έως 48 άτοκες δόσεις</li>
+                        </ul>
+                    </div>
+
+                    <div class="keep-shopping">
+                        <a href="../pages/monochrome_welcome_page.html" class="cart">
+                            <!--<img  class="shopping-icon"  src="../assets/icons/arrow-small-left.png" alt="Cart Icon">-->
+                            <span class="shopping-label" >Συνέχισε τις αγορές σου</span>
+                        </a>
+                    </div>
+
+                    <input type="hidden" id="amount-input" name="amount" value="0.00">
+
+                </div>
+            </section>
+
+    
+
+            <section  class="popup-overlay" id="successful">
+                <div class="popup" >
+                    <div class="availability-checker">
+                        <div class="availability-card">
+                            <h2 class="availability-title">Η παργκελία σου ολοκληρώθηκε!</h2>
+                            <button class="cta" type="button" onclick="closeSuccessMessage()">Κλήσιμο</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="popup-overlay" id="popup">
+                    <div class="popup">
+                    <section class="availability-checker" id="availability">
+
+                        <h2 class="availability-title">Συμπλήρωσε τη διεύθυνση ή το σταθερό σου</h2>
+
+                        <form class="availability-card" action="#" method="get" novalidate onsubmit="event.preventDefault(); openPopup();">
+
+                            <div class="fields-grid" data-mode="address">
+                                <div class="field">
+                                    <label for="prefecture">Νομός</label>
+                                        <div class="select-wrap">
+                                            <select id="prefecture" name="prefecture" required>
+                                                <option value="" selected disabled>Επίλεξε από τη λίστα</option>
+                                                <option value="attica">Αττικής</option>
+                                                <option value="east-attica">Ανατολικής Αττικής</option>
+                                                <option value="west-attica">Δυτικής Αττικής</option>
+                                                <option value="piraeus">Πειραιώς</option>
+
+                                                <option value="thessaloniki">Θεσσαλονίκης</option>
+                                                <option value="chalkidiki">Χαλκιδικής</option>
+                                                <option value="pieria">Πιερίας</option>
+                                                <option value="imathia">Ημαθίας</option>
+                                                <option value="kilkis">Κιλκίς</option>
+                                                <option value="serres">Σερρών</option>
+                                                <option value="drama">Δράμας</option>
+                                                <option value="kavala">Καβάλας</option>
+                                                <option value="xanthi">Ξάνθης</option>
+                                                <option value="rodopi">Ροδόπης</option>
+                                                <option value="evros">Έβρου</option>
+
+                                                <option value="larissa">Λαρίσης</option>
+                                                <option value="trikala">Τρικάλων</option>
+                                                <option value="karditsa">Καρδίτσας</option>
+                                                <option value="magnisia">Μαγνησίας</option>
+                                                <option value="evrytania">Ευρυτανίας</option>
+                                                <option value="fthiotida">Φθιώτιδας</option>
+                                                <option value="fokida">Φωκίδας</option>
+                                                <option value="viotia">Βοιωτίας</option>
+                                                <option value="evia">Εύβοιας</option>
+
+                                                <option value="achaia">Αχαΐας</option>
+                                                <option value="ileia">Ηλείας</option>
+                                                <option value="messinia">Μεσσηνίας</option>
+                                                <option value="laconia">Λακωνίας</option>
+                                                <option value="argolis">Αργολίδας</option>
+                                                <option value="arcadia">Αρκαδίας</option>
+                                                <option value="corinthia">Κορινθίας</option>
+
+                                                <option value="ioannina">Ιωαννίνων</option>
+                                                <option value="preveza">Πρέβεζας</option>
+                                                <option value="thesprotia">Θεσπρωτίας</option>
+                                                <option value="arta">Άρτας</option>
+
+                                                <option value="kerkira">Κέρκυρας</option>
+                                                <option value="lefkas">Λευκάδας</option>
+                                                <option value="kefallinia">Κεφαλληνίας</option>
+                                                <option value="zakynthos">Ζακύνθου</option>
+
+                                                <option value="aetolia-akarnania">Αιτωλοακαρνανίας</option>
+                                                <option value="grevena">Γρεβενών</option>
+                                                <option value="kastoria">Καστοριάς</option>
+                                                <option value="kozani">Κοζάνης</option>
+                                                <option value="florina">Φλώρινας</option>
+
+                                                <option value="chania">Χανίων</option>
+                                                <option value="rethymno">Ρεθύμνου</option>
+                                                <option value="heraklion">Ηρακλείου</option>
+                                                <option value="lasithi">Λασιθίου</option>
+
+                                                <option value="samos">Σάμου</option>
+                                                <option value="chios">Χίου</option>
+                                                <option value="lesvos">Λέσβου</option>
+                                                <option value="kyklades">Κυκλάδων</option>
+                                                <option value="dodekanisa">Δωδεκανήσου</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label for="municipality">Δήμος</label>
+                                    <input id="municipality" name="municipality" type="text" inputmode="text" autocomplete="address-level2" placeholder="">
+                                </div>
+
+                                <div class="field">
+                                    <label for="street">Οδός (ή Οικισμός)</label>
+                                    <input id="street" name="street" type="text" autocomplete="address-line1" placeholder="">
+                                </div>
+
+                                <div class="field">
+                                    <label for="number">Αριθμός</label>
+                                    <input id="number" name="number" type="text" inputmode="numeric" pattern="[0-9]{1,5}" placeholder="">
+                                </div>
+
+                                <div class="field span-2">
+                                    <label for="area">Περιοχή</label>
+                                    <input id="area" name="area" type="text" autocomplete="address-level3" placeholder="">
+                                </div>
+                            </div>
+
+
+                            <div class="fields-grid phone-only" hidden>
+                                <div class="field span-2">
+                                    <label for="fixed-phone">Σταθερό</label>
+                                    <input id="fixed-phone" name="fixed_phone" type="tel" inputmode="tel" placeholder="π.χ. 2101234567" pattern="[0-9]{10}">
+                                </div>
+                            </div>
+
+                            <button class="cta" type="button" onclick="closePopup(),  emptyCart(), openSuccessMessage()">Υποβολή</button>
+
+                        </form>
+                    </section>  
+                    </div>
+                </div>
+            </section>  
+    
+
+
+            <script>
+                function openPopup() {document.getElementById("popup").style.display = "flex";}
+                function closePopup() {document.getElementById("popup").style.display = "none";}
+
+                function openSuccessMessage() {document.getElementById("successful").style.display = "flex";}
+                function closeSuccessMessage() {document.getElementById("successful").style.display = "none";}
+
+            </script> 
+
+            <section class="popular plans" aria-labelledby="plans-title">
+                <div class="cards-container">
+                    <h2 id="plans_title" class="polular-title">Μπορεί να σε ενδιαφέρουν:</h2>
+                    <div class="grid_cards">
+
+                        <article class="card">
+                            <img class="card-image"src="../assets_white/images/family.jpg" alt="products">
+                            <div class="card-info">
+                                <h3 class="card-title">Home</h3>
+                                <p class="card-price">26,90€<span>/μήνα</span></p>
+                                <ul class="card-list">
+                                <li>Απεριόριστα λεπτά προς σταθερά</li>
+                                <li>200 λεπτά προς κινητά</li>
+                                <li>Δωρεάν router τελευταίας τεχνολογίας</li>
+                            </ul>
+                                <a href="../pages_white/white_landline_packages.html" class="card_button">Δες περισσότερα</a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img class="card-image" src="../assets_white/images/pexels-tima.jpg" alt="products">
+                            <div class="card-info"> 
+                                <h3 class="card-title">Mobile</h3>
+                                <p class="card-price">14,90€<span>/μήνα</span></p>
+                                <ul class="card-list">
+                                <li>300 λεπτά προς όλα τα δίκτυα</li>
+                                <li>1000 SMS προς όλα τα δίκτυα</li>
+                                <li>4 GB Internet</li>
+                                </ul>
+                                <a href="../pages_white/white_mobile_packages.html" class="card_button">Δες περισσότερα</a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img class="card-image" src="../assets_white/images/movie.jpg" alt="products">
+                            <div class="card-info">
+                                <h3 class="card-title">TV Cinema</h3>
+                                <p class="card-price">14,90€<span>/mo</span></p>
+                                <ul class="card-list">
+                                <li>Ταινίες πρώτης προβολής & χιλιάδες κλασικές</li>
+                                <li>Σειρές διεθνείς & ελληνικές</li>
+                                <li>Παιδικά προγράμματα</li>
+                                <li>Ειδησεογραφικά κανάλια</li>
+                            </ul>
+                                <a href="../pages_white/white_tv_packages.html" class="card_button">Δες περισσότερα</a>
+                            </div>
+                        </article>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter">
+                <div class="newsletter-container">
+                    <div class="newsletter-icons">
+                        <a href="#"><img src="../assets_white/icons/facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="../assets_white/icons/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="../assets_white/icons/twitter.png" alt="Twitter"></a>
+                        <a href="#"><img src="../assets_white/icons/youtube.png" alt="YouTube"></a>
+                    </div>
+
+                    <h2 class="newsletter-title">JOIN OUR MAILING LIST</h2>
+                    <p class="newsletter-subtitle">NEVER MISS AN UPDATE</p>
+
+                    <form class="newsletter-form">
+                        <input type="email" id="email" name="email" placeholder="Enter your email here " required>
+                        <button type="submit">SUBSCRIBE NOW</button>
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
+
+
 
         <footer class="footer" id="site-footer">
             <div class="footer-container">
@@ -108,6 +394,8 @@
                 <p>&copy; 2025 Cellectro. Όλα τα δικαιώματα διατηρούνται.</p>
             </div>
         </footer>
+
+        <script src="../script_white/white_checkout_script.js" defer></script>
 
     </body>
 </html>

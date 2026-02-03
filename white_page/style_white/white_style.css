@@ -177,16 +177,17 @@ body a{
 /* Hero */
 
 
-    /* vw=viewport’s width or browser window width */
+    /* vw=viewport’s width or browser window width 
 
-    /* vh = viewport’s height */
+    /* vh = viewport’s height 
 
-    /* ch= width of 0 */
+    /* ch= width of 0 
 
-    /* rem=fond size */
+    /* rem=fond size 
     /* 2rem = fond size * 2 */
-    /* consistency is KEY 🗝 */
-    /* Yee */
+
+    /* consistency is KEY 🗝 
+    /* Yeeeeee */
 
 
 .container.inner.hero{
@@ -283,8 +284,11 @@ body a{
 /* Popular Plans */
 
 .popular.plans{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin:0;
+}
+#plans-title,
+.polular-title{
+    margin-left: 3rem;
 }
 
 .grid_cards {
@@ -292,15 +296,18 @@ body a{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
     gap: 20px;
-    align-items: stretch;
-    margin: auto;
+    /*--align-items: stretch; */
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
-
+/*
+Ποτέ δε θυμάμαι ποια σχόλια πάνε σε κάθε γλώσσα
+*/ 
 
 .grid_cards .card{
 
-    width: 30vw;
-    min-height: 60vh;
+    width: 90%;
+    height: 80vh;
     border: 4px solid #e5e7eb;
     border-radius: 10px;
 
@@ -322,7 +329,7 @@ body a{
 
 .card-image{
     width: 100%;
-    height: 280px;
+    height: 300px;
     border-radius: 5px;
 
     object-fit: cover;
@@ -548,6 +555,10 @@ body a{
         background: url("../assets_white/images/hero-poster.jpg") center/cover no-repeat;
     }
 }
+
+/* It is not even that dificult  */
+/* Why i cannot make it? */
+
 @media (max-width: 900px) {
     .main.header .heading {
         grid-template-columns: auto auto;
@@ -659,3 +670,216 @@ body a{
 
     .footer-bottom { margin-top: 12px; padding-top: 12px; }
 }
+
+
+/*  Newsletter */
+.newsletter{
+  background: var(--bg-ribbon-odd);
+  padding: 3rem var(--container-pad);
+}
+
+.newsletter-container{
+  max-width: 80%;
+  height: 40vh;
+  margin: 0 auto;
+
+  background: var(--bg-ribbon-even);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 10px 30px var(--shadow-color);
+
+  padding:  3rem ;
+  text-align: center;
+}
+
+.newsletter-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.newsletter-icons a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 20px;
+
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 14px var(--shadow-color);
+  background: var(--colour);
+}
+
+.newsletter-icons a:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px var(--shadow-color);
+
+
+}
+
+.newsletter-icons img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.newsletter-title{
+  margin: 2.2rem;
+  font-size: clamp(20px, 2.2vw, 28px);
+  
+  letter-spacing: .09rem;
+  color: var(--text-main);
+}
+
+.newsletter-subtitle{
+  margin: 0 2rem 2rem 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  letter-spacing: .08rem;
+}
+
+.newsletter-form{
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  align-items: center;
+
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.newsletter-form input[type="email"]{
+  height: 3rem;
+  padding: 0 1rem;
+
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-small);
+  background: var(--colour);
+  color: var(--text-main);
+
+  outline: none;
+}
+
+.newsletter-form input[type="email"]::placeholder{
+  color: var(--text-muted);
+}
+
+.newsletter-form input[type="email"]:focus{
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--bg-btn) 20%, transparent);
+}
+
+.newsletter-form button{
+  height: 3rem;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+
+  background: var(--bg-btn);
+  color: var(--colour);
+
+  font-weight: 700;
+  letter-spacing: .03em;
+
+  box-shadow: 0 8px 22px var(--shadow-color);
+}
+
+.newsletter-form button:hover{
+  background: var(--bg-btn-muted);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px var(--shadow-color);
+}
+
+/* Responsive: stack input + button */
+@media (max-width: 700px){
+  .newsletter{
+    padding: 1rem var(--container-pad);
+  }
+
+  .newsletter-form{
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form button{
+    width: 100%;
+  }
+}
+
+/* faq*/
+
+.faq {
+
+  margin: 8rem auto;
+
+  display: grid;
+  gap: 2rem ;
+  justify-content: space-around;
+  
+}
+
+.details {
+  width: 60vw;
+  background: var(--colour);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-medium);
+
+  box-shadow: 0 6px 20px var(--shadow-color);
+
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.details:hover {
+  transform: translateY(-2px);
+}
+
+.summary {
+  cursor: pointer;
+
+  padding: 16px 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: var(--text-main);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::after {
+  content: "▾";
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+}
+
+.details[open] .summary::after {
+  transform: rotate(180deg);
+  color: var(--bg-btn);
+}
+
+.answer {
+  padding: 0 18px 16px;
+  border-top: 1px solid var(--border-light);
+  font-size: .9rem;
+
+  color: var(--text-color);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.details[open] .answer {
+  animation: fadeIn 0.25s ease;
+}
+

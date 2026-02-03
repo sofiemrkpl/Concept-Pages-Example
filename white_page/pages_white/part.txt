@@ -1,0 +1,34 @@
+
+        <section class="module landline module-odd">
+            <module class="module-odd">
+                <div class="module-image " >
+                    <img class="image" src="../assets_white/images/family.jpg" alt="module image">
+                </div>
+                <div class="module-info ">
+                    <h3>Σταθερό και Internet</h3>
+                    <p class="module-text">Αξιόπιστο WiFi και τηλεφωνία <br> με πακέτα για όλη την οικογένεια</p>
+                    <!-- <button>-->
+
+                </div>     
+            </module>
+            
+            <module class="module-even">
+                <div class="module-image " >
+                    <img class="image"src="../assets_white/images/family.jpg" alt="module image">
+                </div>
+                <div class="module-info ">
+                    <h3>Σταθερό και Internet</h3>
+                    <p class="module-text">Αξιόπιστο WiFi και τηλεφωνία <br> με πακέτα για όλη την οικογένεια</p>
+                </div>     
+            </module>
+
+            <module class="module-odd">
+                <div class="module-image " >
+                    <img class="image" src="../assets_white/images/family.jpg"alt="module image">
+                </div>
+                <div class="module-info ">
+                    <h3>Σταθερό και Internet</h3>
+                    <p class="module-text">Αξιόπιστο WiFi και τηλεφωνία <br> με πακέτα για όλη την οικογένεια</p>
+                </div>     
+            </module>            
+        </section>
