@@ -1,0 +1,15 @@
+            <section class="faq">
+                <details class="details">
+                    <summary class="summary">Υπάρχουν έξοδα ενεργοποίησης;</summary>
+                    <div class="answer">
+                    <p>Σε επιλεγμένα πακέτα είναι μηδενικά. Δες τους όρους κάθε προγράμματος.</p>
+                    </div>
+                </details>
+
+                <details class="details">
+                    <summary class="summary">Μπορώ να κρατήσω το νούμερό μου;</summary>
+                    <div class="answer">
+                    <p>Ναι, υποστηρίζουμε φορητότητα αριθμού χωρίς χρέωση.</p>
+                    </div>
+                </details>
+            </section>

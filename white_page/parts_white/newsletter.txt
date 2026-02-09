@@ -1,0 +1,19 @@
+        <section class="newsletter">
+            <div class="newsletter-container">
+                <div class="newsletter-icons">
+                    <a href="#"><img src="../assets_white/icons/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="../assets_white/icons/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="../assets_white/icons/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="../assets_white/icons/youtube.png" alt="YouTube"></a>
+                </div>
+
+                <h2 class="newsletter-title">JOIN OUR MAILING LIST</h2>
+                <p class="newsletter-subtitle">NEVER MISS AN UPDATE</p>
+
+                <form class="newsletter-form">
+                    <input type="email" id="email" name="email" placeholder="Enter your email here " required>
+                    <button type="submit">SUBSCRIBE NOW</button>
+                </form>
+
+            </div>
+        </section>    
