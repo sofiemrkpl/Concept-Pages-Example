@@ -28,26 +28,33 @@ body{
 
 header{
     background:var(--white);
-    padding:50px 20px;
+    padding:2rem;
     text-align:center;
     border-bottom:1px solid var(--border);
-
+    /*gap: 2rem;
+    */
 
 }
 
 header h1{
     font-size:2rem;
-    margin-bottom:2rem;
     font-weight:700;
-    margin:0; 
+    margin: 2rem;
 }
 
-header p{
-    
+header p,
+main p{
+    text-align:center;
+    margin-top: 2rem;
     margin:auto;
-    
+    max-width: 60vw;
     color:var(--muted);
+    
+    /*color: var(--text);
+    */
+    font-size: 1.1rem;
 }
+
 
 main{
     display:grid;
@@ -91,6 +98,7 @@ main{
 
 section p,
 .card p{
+    text-align:left;
     color:var(--muted);
     margin-bottom:1.4rem;
 }
