@@ -311,3 +311,25 @@ module {
     opacity: 1;
   }
 }
+@media (max-width: 900px){
+  .packages-section{
+    max-width: 90vw;
+  }
+  .package-card{
+    max-width: 85%;
+  }
+  .package-bottom{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .package-price{
+    text-align: left;
+    font-size: 2rem;
+  }
+
+  .package-head,
+  .package-cta{
+    max-width: 100%;
+  }
+}
