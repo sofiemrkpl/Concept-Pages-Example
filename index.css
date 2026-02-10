@@ -28,7 +28,7 @@ body{
 
 header{
     background:var(--white);
-    padding:2rem;
+    padding:1.5rem;
     text-align:center;
     border-bottom:1px solid var(--border);
     /*gap: 2rem;
@@ -39,7 +39,6 @@ header{
 header h1{
     font-size:2rem;
     font-weight:700;
-    margin: 2rem;
 }
 
 header p,
@@ -60,7 +59,7 @@ main{
     display:grid;
     max-width:1100px;
     margin:40px auto;
-    padding:20px;
+    padding:1rem;
     gap:32px; 
     
 }
@@ -73,13 +72,13 @@ main{
 
 .card_grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(20vw,2fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap:2rem;
 }
 
 
 .card{
-    background:var(--card);
+    background:var(--white);
     border-radius: 1rem;
     padding:2rem;
     /*transition:.25s;
@@ -89,7 +88,7 @@ main{
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:var(--accent);
+    border-color:var(--colour);
     box-shadow:0 10px 24px rgba(0,0,0,0.06);
 }
 .card h3{
@@ -113,12 +112,26 @@ section p,
     font-weight:600;
 }
 
-
-
 footer{
     margin-top:1.2rem;
     padding:2rem;
     text-align:center;
     color:var(--muted);
     border-top:1px solid var(--border);
+}
+
+
+
+@media (max-width: 600px){
+
+  header h1{
+    font-size: 1.5rem;
+  }
+
+  .btn{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
 }
