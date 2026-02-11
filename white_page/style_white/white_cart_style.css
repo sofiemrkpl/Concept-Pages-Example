@@ -36,7 +36,14 @@
   width: 75vw;
   justify-self: center;
 }
-
+@media (max-width: 900px){
+  .checkout-items,
+  .cart-sum {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+}
 
 .empty-state{
   display: grid;
@@ -192,28 +199,35 @@
   align-items: center;
   justify-content: center;
 
-  padding: 5rem;
+  padding: 16px;
   background: rgba(0,0,0,.55);
   z-index: 100;
+  overflow-y: auto;
 }
 
 .popup{
-  width: min(50vw, 100%);
+  width: min(560px, calc(100vw - 32px));
   background: transparent;
   align-items: center;
+
+  margin: auto;
+  display: grid;
 }
 
 .availability-checker{
   width: 100%;
   display: grid;
   align-items: center;
+  gap: 10px;
 }
 
 .availability-title{
-  margin: 0 0 10px;
+  margin: 0;
   text-align: center;
   color: var(--text-main);
   font-size: 18px;
+  line-height: 1.25;
+  padding: 0 6px;
 }
 
 
@@ -338,11 +352,35 @@
   }
 }
 
-@media (max-width: 520px){
+@media (max-width: 600px){
   .fields-grid{
     grid-template-columns: 1fr;
   }
   .span-2{
     grid-column: auto;
+  }
+}
+
+@media (max-width: 600px){
+  .popup-overlay{
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .popup{
+    width: 100%;
+  }
+
+  .availability-card{
+    padding: 14px;
+  }
+
+  .field input,
+  .field select{
+    height: 44px;
+  }
+
+  .cta{
+    height: 52px;
   }
 }

@@ -281,6 +281,26 @@ body a{
     margin: 0px;
 }
 
+
+@media (max-width: 600px){
+  .hero.title{
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .hero.title br{
+    display: none;
+  }
+
+  #hero_btn1{
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+  }
+}
+
+
+
 /* hero end */
 
 
