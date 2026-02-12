@@ -133,5 +133,11 @@ footer{
     width: 100%;
     text-align: center;
   }
+  main p{
+    max-width: 90vw;
+    text-align: left;
+    line-height: 1.4rem;
+    
+  }
 
 }
